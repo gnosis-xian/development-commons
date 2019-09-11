@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>development-commons-gnosis</artifactId>
+        <groupId>top.agno.gnosis</groupId>
+        <version>1.0-RELEASE</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>top.agno.gnosis</groupId>
+    <artifactId>in-one</artifactId>
+    <packaging>jar</packaging>
+
+    <dependencies>
+        <dependency>
+            <groupId>top.agno.gnosis</groupId>
+            <artifactId>aspects</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>top.agno.gnosis</groupId>
+            <artifactId>constants</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>top.agno.gnosis</groupId>
+            <artifactId>poi</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>top.agno.gnosis</groupId>
+            <artifactId>repeat-commit</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>top.agno.gnosis</groupId>
+            <artifactId>utils</artifactId>
+        </dependency>
+    </dependencies>
+
+
+</project>
