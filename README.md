@@ -23,6 +23,10 @@ This project will be open source and everyone can contribute codes.
 - You will get the code on maven repository.
 - You will be this project contributor.
 
+## Project Construction
+
+More...
+
 ## Contributors
 
 - <a href="https://github.com/gnosis-xian/">gnosis-xian</a>

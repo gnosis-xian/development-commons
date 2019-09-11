@@ -23,6 +23,10 @@ Language Switch | 语言切换
 - 你可以再maven仓库获取到你的代码。
 - 你会成为此项目的贡献者。
 
+## 项目结构
+
+更多...
+
 ## 贡献者
 
 - <a href="https://github.com/gnosis-xian/">gnosis-xian</a>
