@@ -12,8 +12,8 @@ import java.util.List;
 import java.util.Map;
 
 /**
-  * @author: gaojing [gaojing1996@vip.qq.com]
-  */
+ * @author: gaojing [gaojing1996@vip.qq.com]
+ */
 public class DocUtil {
 
     public static void main(String[] args) {
@@ -93,69 +93,69 @@ public class DocUtil {
 
         // 比较文件扩展名
 //        if (sp[sp.length - 1].equalsIgnoreCase("docx")) {
-            XWPFDocument document = new XWPFDocument(inputStream);
-            // 替换段落中的指定文字
-            Iterator<XWPFParagraph> itPara = document.getParagraphsIterator();
-            while (itPara.hasNext()) {
-                XWPFParagraph paragraph = itPara.next();
-                List<XWPFRun> runs = paragraph.getRuns();
-                for (XWPFRun run : runs) {
-                    String oneparaString = run.getText(run.getTextPosition());
-                    if (oneparaString == null || "".equals(oneparaString)) {
+        XWPFDocument document = new XWPFDocument(inputStream);
+        // 替换段落中的指定文字
+        Iterator<XWPFParagraph> itPara = document.getParagraphsIterator();
+        while (itPara.hasNext()) {
+            XWPFParagraph paragraph = itPara.next();
+            List<XWPFRun> runs = paragraph.getRuns();
+            for (XWPFRun run : runs) {
+                String oneparaString = run.getText(run.getTextPosition());
+                if (oneparaString == null || "".equals(oneparaString)) {
+                    continue;
+                }
+                for (Map.Entry<String, String> entry :
+                        map.entrySet()) {
+                    oneparaString = oneparaString.replace("${" + entry.getKey() + "}", entry.getValue());
+                }
+                run.setText(oneparaString, 0);
+            }
+
+        }
+
+        // 替换表格中的指定文字
+        Iterator<XWPFTable> itTable = document.getTablesIterator();
+        while (itTable.hasNext()) {
+            XWPFTable table = itTable.next();
+            int rcount = table.getNumberOfRows();
+            for (int i = 0; i < rcount; i++) {
+                XWPFTableRow row = table.getRow(i);
+                List<XWPFTableCell> cells = row.getTableCells();
+                for (XWPFTableCell cell : cells) {
+                    String cellTextString = cell.getText();
+                    if (cellTextString == null || "".equals(cellTextString)) {
                         continue;
                     }
-                    for (Map.Entry<String, String> entry :
-                            map.entrySet()) {
-                        oneparaString = oneparaString.replace("${" + entry.getKey() + "}", entry.getValue());
-                    }
-                    run.setText(oneparaString, 0);
-                }
-
-            }
-
-            // 替换表格中的指定文字
-            Iterator<XWPFTable> itTable = document.getTablesIterator();
-            while (itTable.hasNext()) {
-                XWPFTable table = itTable.next();
-                int rcount = table.getNumberOfRows();
-                for (int i = 0; i < rcount; i++) {
-                    XWPFTableRow row = table.getRow(i);
-                    List<XWPFTableCell> cells = row.getTableCells();
-                    for (XWPFTableCell cell : cells) {
-                        String cellTextString = cell.getText();
-                        if (cellTextString == null || "".equals(cellTextString)) {
-                            continue;
-                        }
-                        for (Map.Entry<String, String> e : map.entrySet()) {
-                            String pre = cell.getText();
-                            cellTextString = cellTextString.replace("${" + e.getKey() + "}", e.getValue());
-                            if (!StringUtil.equals(pre, cellTextString)) {
-                                cell.removeParagraph(0);
-                                cell.setText(cellTextString);
-                                break;
-                            }
+                    for (Map.Entry<String, String> e : map.entrySet()) {
+                        String pre = cell.getText();
+                        cellTextString = cellTextString.replace("${" + e.getKey() + "}", e.getValue());
+                        if (!StringUtil.equals(pre, cellTextString)) {
+                            cell.removeParagraph(0);
+                            cell.setText(cellTextString);
+                            break;
                         }
                     }
                 }
             }
-            ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
-            document.write(byteArrayOutputStream);
+        }
+        ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+        document.write(byteArrayOutputStream);
 
-            response.setContentType("multipart/form-data;application/msword");
-            response.setHeader("Content-Disposition", "attachment;filename=" + new String((destFileName + destFileSuf).getBytes(), "iso-8859-1"));
-            response.setHeader("Access-Control-Allow-Origin", "*");
-            ServletOutputStream outputStream = response.getOutputStream();
+        response.setContentType("multipart/form-data;application/msword");
+        response.setHeader("Content-Disposition", "attachment;filename=" + new String((destFileName + destFileSuf).getBytes(), "iso-8859-1"));
+        response.setHeader("Access-Control-Allow-Origin", "*");
+        ServletOutputStream outputStream = response.getOutputStream();
 //            outputStream.write(byteArrayOutputStream.toByteArray());
-            document.write(outputStream);
+        document.write(outputStream);
 
-            InputStream in = new ByteArrayInputStream(byteArrayOutputStream.toByteArray());
-            byte[] buffer = new byte[1024];
-            int len = 0;
-            while ((len = in.read(buffer)) > 0) {
-                outputStream.write(buffer, 0, len);
-            }
-            outputStream.flush();
-            return true;
+        InputStream in = new ByteArrayInputStream(byteArrayOutputStream.toByteArray());
+        byte[] buffer = new byte[1024];
+        int len = 0;
+        while ((len = in.read(buffer)) > 0) {
+            outputStream.write(buffer, 0, len);
+        }
+        outputStream.flush();
+        return true;
 //        }
 
 //        return false;

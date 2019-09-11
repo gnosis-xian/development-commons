@@ -14,9 +14,11 @@
  * limitations under the License.
  */
 
-package top.agno.gnosis.utils;
+package top.agno.gnosis.utils.random;
 
+import java.math.BigDecimal;
 import java.security.SecureRandom;
+import java.util.UUID;
 
 /**
  * <pre>
@@ -350,5 +352,61 @@ public final class RandomUtils {
             return random(count, 0, 0, false, false, null, RANDOM);
         }
         return random(count, 0, chars.length, false, false, chars, RANDOM);
+    }
+
+    /**
+     * 生成指定长度的随机数字符串.
+     *
+     * @param length 随机数长度
+     * @return String 随机数
+     */
+    public static String generateRandomNumber(int length) {
+        int hashCodeV = UUID.randomUUID().toString().hashCode();
+        //有可能是负数
+        if (hashCodeV < 0) {
+            hashCodeV = -hashCodeV;
+        }
+        StringBuffer code = new StringBuffer(String.valueOf(hashCodeV));
+        //如果hashcode位数不够，则在后面拼随机数
+        String number = (new BigDecimal(((Math.random() * 9 + 1) * Math.pow(10, length - code.length() - 1)))).toString().substring(0, length - code.length());
+        code.append(number);
+        return code.toString();
+    }
+
+
+    /**
+     * 生成指定长度的随机数字符串.
+     *
+     * @param length 随机数长度
+     * @param prefix 前缀
+     * @return String 随机数
+     */
+    public static String generateRandomNumber(int length, String prefix) {
+        int hashCodeV = UUID.randomUUID().toString().hashCode();
+        //有可能是负数
+        if (hashCodeV < 0) {
+            hashCodeV = -hashCodeV;
+        }
+        StringBuffer code = new StringBuffer(prefix).append(String.valueOf(hashCodeV));
+        //如果hashcode位数不够，则在后面拼随机数
+        String number = (new BigDecimal(((Math.random() * 9 + 1) * Math.pow(10, length - code.length() - 1)))).toString().substring(0, length - code.length());
+        code.append(number);
+        return code.toString();
+    }
+
+    /**
+     * 获取随机TOKEN信息
+     *
+     * @return token
+     */
+    public static String getToken() {
+        UUID uuid = UUID.randomUUID();
+        // 得到对象产生的ID
+        String token = uuid.toString();
+        // 转换为大写
+        token = token.toUpperCase();
+        // 替换 “-”变成空格
+        token = token.replaceAll("-", "");
+        return token;
     }
 }

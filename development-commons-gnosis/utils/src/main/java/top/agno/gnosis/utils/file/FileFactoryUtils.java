@@ -14,9 +14,10 @@
  * limitations under the License.
  */
 
-package top.agno.gnosis.utils;
+package top.agno.gnosis.utils.file;
 
 import lombok.extern.slf4j.Slf4j;
+import top.agno.gnosis.utils.StringUtil;
 
 import java.io.IOException;
 import java.io.RandomAccessFile;
