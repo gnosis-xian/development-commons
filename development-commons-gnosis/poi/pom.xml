@@ -17,6 +17,10 @@
             <groupId>top.agno.gnosis</groupId>
             <artifactId>constants</artifactId>
         </dependency>
+        <dependency>
+            <groupId>top.agno.gnosis</groupId>
+            <artifactId>utils</artifactId>
+        </dependency>
 
         <dependency>
             <groupId>org.projectlombok</groupId>
