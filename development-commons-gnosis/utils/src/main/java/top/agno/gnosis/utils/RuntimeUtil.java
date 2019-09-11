@@ -35,26 +35,36 @@ import java.util.jar.JarFile;
  */
 public final class RuntimeUtil {
 
-    /** 进程id */
+    /**
+     * 进程id
+     */
     public static final String PID = ManagementFactory.getRuntimeMXBean().getName().split("@")[0];
-    /** 操作系统 */
+    /**
+     * 操作系统
+     */
     public static final String OSNAME = System.getProperty("os.name");
-    /** 可达进程 */
+    /**
+     * 可达进程
+     */
     public static final int AVAILABLE_PROCESSORS = Runtime.getRuntime().availableProcessors() + 1;
-    /** 令牌 */
+    /**
+     * 令牌
+     */
     public static final String TOKEN = MD5.encryptMD5(AES.encrypt(
             "ytoframework.TOKEN::encrypt:net.ytooframework.kernel.common.util.RuntimeUtil", null,
             null), MD5.MIN_MD5_LENGTH);
 
-    private RuntimeUtil(){}
+    private RuntimeUtil() {
+    }
 
     /**
      * 杀死当前系统进行
+     *
      * @throws IOException IO异常
      */
     public static void killProcess() throws IOException {
         if (OSNAME.indexOf("Mac") > -1 || OSNAME.indexOf("Linux") > -1) {
-            String[] cmds = new String[] {"/bin/sh", "-c", "kill -9 " + PID};
+            String[] cmds = new String[]{"/bin/sh", "-c", "kill -9 " + PID};
             Runtime.getRuntime().exec(cmds);
         } else if (OSNAME.indexOf("Windows") > -1) {
             Runtime.getRuntime().exec("cmd /c taskkill /pid " + PID + " /f ");
@@ -64,12 +74,13 @@ public final class RuntimeUtil {
 
     /**
      * 根据进程号杀死对应的进程
+     *
      * @param pid 进程号
      * @throws IOException IO异常
      */
     public static void killProcess(final String pid) throws IOException {
         if (OSNAME.indexOf("Mac") > -1 || OSNAME.indexOf("Linux") > -1) {
-            String[] cmds = new String[] {"/bin/sh", "-c", "kill -9 " + pid};
+            String[] cmds = new String[]{"/bin/sh", "-c", "kill -9 " + pid};
             Runtime.getRuntime().exec(cmds);
 
         } else if (OSNAME.indexOf("Windows") > -1) {
@@ -81,12 +92,13 @@ public final class RuntimeUtil {
 
     /**
      * 根据进程号优雅退出进程
+     *
      * @param pid 进程号
      * @throws IOException IO异常
      */
     public static void exitProcess(final String pid) throws IOException {
         if (OSNAME.indexOf("Mac") > -1 || OSNAME.indexOf("Linux") > -1) {
-            String[] cmds = new String[] {"/bin/sh", "-c", "kill -15 " + pid};
+            String[] cmds = new String[]{"/bin/sh", "-c", "kill -15 " + pid};
             Runtime.getRuntime().exec(cmds);
         } else if (OSNAME.indexOf("Windows") > -1) {
             Runtime.getRuntime().exec("cmd /c taskkill /pid " + pid + " /f ");
@@ -97,6 +109,7 @@ public final class RuntimeUtil {
 
     /**
      * 根据进程号查询该进程是否存在
+     *
      * @param pid 进程号
      * @return 查询结果
      * @throws IOException IO异常
@@ -110,7 +123,7 @@ public final class RuntimeUtil {
         boolean exsits = false;
         String result = null;
         if (OSNAME.indexOf("Mac") > -1 || OSNAME.indexOf("Linux") > -1) {
-            String[] cmds = new String[] {"/bin/sh", "-c", "ps -f -p " + pid};
+            String[] cmds = new String[]{"/bin/sh", "-c", "ps -f -p " + pid};
             process = Runtime.getRuntime().exec(cmds);
 
             InputStream in = process.getInputStream();
@@ -140,6 +153,7 @@ public final class RuntimeUtil {
 
     /**
      * 判断当前运行的系统是否是Windows.
+     *
      * @return boolean
      */
     public static boolean isWindows() {
@@ -148,6 +162,7 @@ public final class RuntimeUtil {
 
     /**
      * 根据Class获取该Class所在的磁盘路径.
+     *
      * @param clz 查询的类
      * @return 返回该类的所在位置
      */
@@ -163,6 +178,7 @@ public final class RuntimeUtil {
 
     /**
      * 获取运行时中的所有Jar文件
+     *
      * @return List
      * @throws IOException if I/O error occur
      */

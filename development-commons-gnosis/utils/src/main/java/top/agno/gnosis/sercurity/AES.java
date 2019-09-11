@@ -26,15 +26,18 @@ import java.util.Base64;
  * <pre>
  * AES加密
  * </pre>
+ *
  * @author yto.net.cn
  * @since 1.0.0
  */
 public final class AES {
 
-    private AES() {}
+    private AES() {
+    }
 
     /**
      * AES加密
+     *
      * @param content 明文
      * @param key     秘钥
      * @param ivStr   the iv字符串
@@ -59,6 +62,7 @@ public final class AES {
 
     /**
      * AES解密
+     *
      * @param content 密文
      * @param key     秘钥
      * @param ivStr   the iv字符串

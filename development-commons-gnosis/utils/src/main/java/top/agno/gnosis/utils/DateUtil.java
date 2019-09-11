@@ -30,6 +30,7 @@ import java.util.*;
  * 名称: DateUtil
  * 描述: 日期操作工具类
  * </pre>
+ *
  * @author yto.net.cn
  * @since 1.0.0
  */
@@ -40,19 +41,33 @@ public final class DateUtil {
      * 日期类型枚举
      */
     public enum Type {
-        /** 年 */
+        /**
+         * 年
+         */
         Year,
-        /** 月 */
+        /**
+         * 月
+         */
         Month,
-        /** 周 */
+        /**
+         * 周
+         */
         Week,
-        /** 天 */
+        /**
+         * 天
+         */
         Day,
-        /** 时 */
+        /**
+         * 时
+         */
         Hour,
-        /** 分 */
+        /**
+         * 分
+         */
         Minutes,
-        /** 秒 */
+        /**
+         * 秒
+         */
         Seconds;
     }
 
@@ -108,7 +123,7 @@ public final class DateUtil {
     public final static String chinaDate = "yyyy年MM月dd日 HH时:mm分:ss秒";
     public final static String currentTimeZone = "GMT+8";
 
-    public final static String[] weekArr =  {"周日","周一","周二","周三","周四","周五","周六"};
+    public final static String[] weekArr = {"周日", "周一", "周二", "周三", "周四", "周五", "周六"};
 
     /**
      * 1天折算成毫秒数
@@ -126,56 +141,105 @@ public final class DateUtil {
      * 毫秒数
      */
     public static final long MILLIS = 1000;
-    /** 一天内最后的一小时 */
+    /**
+     * 一天内最后的一小时
+     */
     public static final int LAST_HOUR_IN_DAY = 23;
-    /** 一小时内最后的一分钟  */
+    /**
+     * 一小时内最后的一分钟
+     */
     public static final int LAST_MINUTE_IN_HOURE = 59;
-    /** 一分钟内最后的一秒 */
+    /**
+     * 一分钟内最后的一秒
+     */
     public static final int LAST_SECOND_IN_MINUTE = 59;
-    /** 一周的天数 */
+    /**
+     * 一周的天数
+     */
     public static final int DAYS_A_WEEK = 7;
-    /** 一年的月数 */
+    /**
+     * 一年的月数
+     */
     public static final int MONTHS_A_YEAR = 12;
-    /** 周一 */
+    /**
+     * 周一
+     */
     public static final int FIRST_OF_WEEK = 1;
-    /** 周二 */
+    /**
+     * 周二
+     */
     public static final int SECOND_OF_WEEK = 2;
-    /** 周三 */
+    /**
+     * 周三
+     */
     public static final int THIRD_OF_WEEK = 3;
-    /** 周四 */
+    /**
+     * 周四
+     */
     public static final int FOURTH_OF_WEEK = 4;
-    /** 周五 */
+    /**
+     * 周五
+     */
     public static final int FIFTH_OF_WEEK = 5;
-    /** 周六 */
+    /**
+     * 周六
+     */
     public static final int SIXTH_OF_WEEK = 6;
-    /** 周日 */
+    /**
+     * 周日
+     */
     public static final int SEVENTH_OF_WEEK = 7;
-    /** 一月 */
+    /**
+     * 一月
+     */
     public static final int FITST_MONTH = 1;
-    /** 二月 */
+    /**
+     * 二月
+     */
     public static final int SECOND_MONTH = 2;
-    /** 三月 */
+    /**
+     * 三月
+     */
     public static final int THIRD_MONTH = 3;
-    /** 四月 */
+    /**
+     * 四月
+     */
     public static final int FOURTH_MONTH = 4;
-    /** 五月 */
+    /**
+     * 五月
+     */
     public static final int FIFTH_MONTH = 5;
-    /** 六月 */
+    /**
+     * 六月
+     */
     public static final int SIXTH_MONTH = 6;
-    /** 七月 */
+    /**
+     * 七月
+     */
     public static final int SEVENTH_MONTH = 7;
-    /** 八月 */
+    /**
+     * 八月
+     */
     public static final int EIGHTH_MONTH = 8;
-    /** 九月 */
+    /**
+     * 九月
+     */
     public static final int NINTH_MONTH = 9;
-    /** 十月 */
+    /**
+     * 十月
+     */
     public static final int TENTH_MONTH = 10;
-    /** 十一月 */
+    /**
+     * 十一月
+     */
     public static final int ELEVENTH_MONTH = 11;
-    /** 十二月 */
+    /**
+     * 十二月
+     */
     public static final int TWELFTH_MONTH = 12;
 
-    private DateUtil() {}
+    private DateUtil() {
+    }
 
     /**
      * 取得系统当前年份
@@ -221,7 +285,7 @@ public final class DateUtil {
      * @param pattern    日期格式
      * @return date
      */
-    public static Date toDate(final String dateString, final String pattern){
+    public static Date toDate(final String dateString, final String pattern) {
         return DateTime.parse(dateString, DateTimeFormat.forPattern(pattern)).toDate();
     }
 
@@ -248,7 +312,7 @@ public final class DateUtil {
     /**
      * 将java.util.Date对象转换为字符串
      *
-     * @param date 日期
+     * @param date    日期
      * @param pattern 格式
      * @return 日期字符串
      */
@@ -311,7 +375,7 @@ public final class DateUtil {
     /**
      * 日期增加年数
      *
-     * @param date 日期
+     * @param date  日期
      * @param years 年
      * @return 日期
      */
@@ -457,6 +521,7 @@ public final class DateUtil {
 
     /**
      * 对象转换成日期
+     *
      * @param object 对象
      * @return 日期
      */
@@ -476,6 +541,7 @@ public final class DateUtil {
 
     /**
      * 转换成日期
+     *
      * @param ticks 时间戳
      * @return 日期
      */
@@ -485,6 +551,7 @@ public final class DateUtil {
 
     /**
      * 转换成时间戳
+     *
      * @param time 日期
      * @return 时间戳
      */
@@ -494,6 +561,7 @@ public final class DateUtil {
 
     /**
      * 获取UTC时间戳（以秒为单位）
+     *
      * @return utc时间戳， 以秒为单位
      */
     public static int getTimestampInSeconds() {
@@ -503,6 +571,7 @@ public final class DateUtil {
 
     /**
      * 获取UTC时间戳（以毫秒为单位）
+     *
      * @return utc时间戳， 以毫秒为单位
      */
     public static long getTimestampInMillis() {
@@ -525,7 +594,7 @@ public final class DateUtil {
     /**
      * 获取制定日期的格式化字符串
      *
-     * @param date Date 日期
+     * @param date   Date 日期
      * @param format String 格式
      * @return String
      */
@@ -608,7 +677,7 @@ public final class DateUtil {
     /**
      * 获取指定日期之前或者之后多少天的日期
      *
-     * @param day 指定的时间
+     * @param day    指定的时间
      * @param offset 日期偏移量，正数表示延后，负数表示天前
      * @return Date
      */
@@ -651,8 +720,8 @@ public final class DateUtil {
      * 时间分段 比如：2014-12-12 10:00:00 ～ 2014-12-12 14:00:00 分成两段就是 2014-12-12
      * 10：00：00 ～ 2014-12-12 12：00：00 和2014-12-12 12：00：00 ～ 2014-12-12 14：00：00
      *
-     * @param start 起始日期
-     * @param end 结束日期
+     * @param start  起始日期
+     * @param end    结束日期
      * @param pieces 分成几段
      * @return 分段数组
      */
@@ -705,7 +774,7 @@ public final class DateUtil {
     /**
      * 获取某个日期的当月第一天
      *
-     * @param year 年份
+     * @param year  年份
      * @param month 月份
      * @return 指定日期的当月第一天
      */
@@ -720,7 +789,7 @@ public final class DateUtil {
     /**
      * 获取某个日期的当月最后一天
      *
-     * @param year 年份
+     * @param year  年份
      * @param month 月份
      * @return 指定日期的当月最后一天
      */
@@ -734,9 +803,10 @@ public final class DateUtil {
 
     /**
      * 获取两个日期的时间差，可以指定年，月，周，日，时，分，秒
+     *
      * @param date1 第一个日期
      * @param date2 第二个日期<font color="red">此日期必须在date1之后</font>
-     * @param type DateUtils.Type.X的枚举类型
+     * @param type  DateUtils.Type.X的枚举类型
      * @return long值
      * @throws Exception 异常
      */
@@ -767,11 +837,12 @@ public final class DateUtil {
 
     /**
      * 获取年分差
+     *
      * @param date1 日期1
      * @param date2 日期2
      * @return 年分差
      */
-    public static long getDiffYear(final Date date1, final Date date2){
+    public static long getDiffYear(final Date date1, final Date date2) {
         Calendar cal1 = Calendar.getInstance();
         Calendar cal2 = Calendar.getInstance();
 
@@ -817,12 +888,13 @@ public final class DateUtil {
 
     /**
      * 获取月分差
+     *
      * @param date1 日期1
      * @param date2 日期2
-     * @param year 年份差
+     * @param year  年份差
      * @return 月分差
      */
-    public static long getDiffMonth(final Date date1, final Date date2, final long year){
+    public static long getDiffMonth(final Date date1, final Date date2, final long year) {
         Calendar cal1 = Calendar.getInstance();
         Calendar cal2 = Calendar.getInstance();
 

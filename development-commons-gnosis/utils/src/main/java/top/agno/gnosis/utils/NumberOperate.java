@@ -28,6 +28,7 @@ import java.util.List;
  * 名称: NumberOperate
  * 描述: number 操作final 类
  * </pre>
+ *
  * @author yto.net.cn
  * @since 1.0.0
  */
@@ -46,7 +47,7 @@ public class NumberOperate extends AbstractNumberUtil {
 
     @Override
     public boolean rang(final Integer number1, final boolean isContainsLeft, final Integer number2,
-            final boolean isContainsRight) {
+                        final boolean isContainsRight) {
         BoundType lowerType = BoundType.OPEN, upperType = BoundType.OPEN;
         if (isContainsLeft) {
             lowerType = BoundType.CLOSED;

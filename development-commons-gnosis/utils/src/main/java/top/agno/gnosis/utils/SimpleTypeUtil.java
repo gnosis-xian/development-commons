@@ -28,13 +28,16 @@ import java.util.Set;
  * 名称: RegexUtil
  * 描述: 参考 org.apache.ibatis.type.SimpleTypeRegistry
  * </pre>
+ *
  * @author yto.net.cn
  * @since 1.0.0
  */
 public final class SimpleTypeUtil {
     private static final Set<Class<?>> SIMPLE_TYPE_SET = new HashSet<Class<?>>();
 
-    private SimpleTypeUtil() {}
+    private SimpleTypeUtil() {
+    }
+
     /**
      * 特别注意：由于基本类型有默认值，因此在实体类中不建议使用基本类型作为数据库字段类型
      */
@@ -60,7 +63,7 @@ public final class SimpleTypeUtil {
      *
      * @param clazz 类型
      */
-    public static void registerSimpleType(final Class<?> clazz){
+    public static void registerSimpleType(final Class<?> clazz) {
         SIMPLE_TYPE_SET.add(clazz);
     }
 
@@ -69,7 +72,7 @@ public final class SimpleTypeUtil {
      *
      * @param classes 类型
      */
-    public static void registerSimpleType(final String classes){
+    public static void registerSimpleType(final String classes) {
         if (StringUtil.isNotEmpty(classes)) {
             String[] cls = classes.split(",");
             for (String c : cls) {

@@ -25,6 +25,7 @@ import java.util.*;
 
 /**
  * Excel工具类
+ *
  * @author : zhangbolong
  * @since : 2019-8-21
  */
@@ -225,6 +226,7 @@ public class ExcelExportUtil {
         }
 
     }
+
     private static SXSSFSheet createSheet(String sheetName, String titleName, List<ExcelHeaderDto> headerList, SXSSFWorkbook workbook) {
         SXSSFSheet sheet = workbook.createSheet(sheetName);
         CellStyle titleStyle = workbook.createCellStyle();
@@ -351,7 +353,7 @@ public class ExcelExportUtil {
     }
 
 
-    public static <T> void genMoreSheetsExcelOutStream(HttpServletResponse response, String fileName, String title, String sheetName, List<ExcelHeaderDto> headerList, Map<String,List<T>> map) {
+    public static <T> void genMoreSheetsExcelOutStream(HttpServletResponse response, String fileName, String title, String sheetName, List<ExcelHeaderDto> headerList, Map<String, List<T>> map) {
         ServletOutputStream outputStream = null;
         BufferedInputStream bis = null;
         BufferedOutputStream bos = null;
@@ -359,9 +361,9 @@ public class ExcelExportUtil {
         ByteArrayOutputStream os = new ByteArrayOutputStream();
 
         try {
-            for(String key:map.keySet()) {
+            for (String key : map.keySet()) {
 
-                exportMoreExcel(key, title, headerList, map.get(key),os);
+                exportMoreExcel(key, title, headerList, map.get(key), os);
             }
             byte[] content = os.toByteArray();
             is = new ByteArrayInputStream(content);
@@ -414,13 +416,14 @@ public class ExcelExportUtil {
 
     /**
      * 获取列头
+     *
      * @param headList 请求参数
      * @return ExcelExportDto
      */
     public static List<ExcelHeaderDto> getExcelHeaderDtos(List<ExcelExportSelectDto> headList) {
         List<ExcelHeaderDto> newHeadList = new ArrayList<ExcelHeaderDto>();
         for (ExcelExportSelectDto excelHeadList : headList) {
-            ExcelHeaderDto excelHeaderDto =new ExcelHeaderDto();
+            ExcelHeaderDto excelHeaderDto = new ExcelHeaderDto();
             excelHeaderDto.setHeaderName(excelHeadList.getName());
             excelHeaderDto.setFieldName(excelHeadList.getKey());
             newHeadList.add(excelHeaderDto);

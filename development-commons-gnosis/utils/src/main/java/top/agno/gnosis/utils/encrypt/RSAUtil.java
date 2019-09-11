@@ -109,7 +109,7 @@ public class RSAUtil {
 //
 //        String s1 = decryptByPrivateKey(s, new Base64().encodeBase64String(privateKey.getEncoded()));
 //        System.out.println(s1);
-        String s = encryptByPublicKey("1234qwer!@#$",RSAKeys.PUBLIC_KEY);
+        String s = encryptByPublicKey("1234qwer!@#$", RSAKeys.PUBLIC_KEY);
         System.out.println(s);
         String s1 = decryptByPrivateKey(s, RSAKeys.PRIVATE_KEY);
         System.out.println(s1);
@@ -183,9 +183,10 @@ public class RSAUtil {
         }
         return false;
     }
+
     /**
      * 获取公钥.
-     * */
+     */
     public static String getPublicKey() {
         return RSAKeys.PUBLIC_KEY;
     }
@@ -199,7 +200,8 @@ public class RSAUtil {
      */
     public static String encryptByPublicKey(String data, String publicKey) {
         try {
-            byte[] bytes = encryptByPublicKey(data.getBytes(CHARSET), publicKey);;
+            byte[] bytes = encryptByPublicKey(data.getBytes(CHARSET), publicKey);
+            ;
             String base64 = new String(bytes);
             base64 = base64.replace("\n", "").replace("\r", "");
             return base64;
@@ -210,15 +212,17 @@ public class RSAUtil {
         }
         return null;
     }
+
     /**
      * 非对称加密[公钥加密]
      *
-     * @param data      待加密数据
+     * @param data 待加密数据
      * @return String 加密后数据
      */
     public static String encryptByPublicKey(String data) {
         try {
-            byte[] bytes = encryptByPublicKey(data.getBytes(CHARSET), RSAKeys.PUBLIC_KEY);;
+            byte[] bytes = encryptByPublicKey(data.getBytes(CHARSET), RSAKeys.PUBLIC_KEY);
+            ;
             String base64 = new String(bytes);
             base64 = base64.replace("\n", "").replace("\r", "");
             return base64;
@@ -229,6 +233,7 @@ public class RSAUtil {
         }
         return null;
     }
+
     /**
      * 非对称加密[公钥加密]
      *

@@ -225,7 +225,7 @@ public class ExcelUtil {
      * @param response              绝对路径, 如：/home/chenmingjian/Downloads/aaa.xlsx
      * @param multipleSheelPropetys
      */
-    public static void writeWithMultipleSheel(HttpServletResponse response,String fileName, List<MultipleSheelPropety> multipleSheelPropetys) {
+    public static void writeWithMultipleSheel(HttpServletResponse response, String fileName, List<MultipleSheelPropety> multipleSheelPropetys) {
         if (CollectionUtils.isEmpty(multipleSheelPropetys)) {
             return;
         }
@@ -235,8 +235,8 @@ public class ExcelUtil {
         try {
 //            outputStream = new FileOutputStream(filePath);
             response.setHeader("Access-Control-Expose-Headers", "Content-disposition");
-            response.setHeader("Content-disposition", "attachment;filename="+URLEncoder.encode(fileName, "utf-8")+".xls");
-            outputStream =  response.getOutputStream();
+            response.setHeader("Content-disposition", "attachment;filename=" + URLEncoder.encode(fileName, "utf-8") + ".xls");
+            outputStream = response.getOutputStream();
             writer = EasyExcelFactory.getWriter(outputStream);
             for (MultipleSheelPropety multipleSheelPropety : multipleSheelPropetys) {
                 Sheet sheet = multipleSheelPropety.getSheet() != null ? multipleSheelPropety.getSheet() : initSheet;

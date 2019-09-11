@@ -21,116 +21,222 @@ package top.agno.gnosis.utils;
  * 名称: SpecharsUtil
  * 描述: 特殊符号工具类
  * </pre>
+ *
  * @author yto.net.cn
  * @since 1.0.0
  */
 public final class SpecharsUtil {
 
-    /**     '-'号     */
+    /**
+     * '-'号
+     */
     public static final String SYMBOL_LINE = "-";
-    /**     '#'号     */
+    /**
+     * '#'号
+     */
     public static final String SYMBOL_DELIMITER = "#";
-    /**     空字符串     */
+    /**
+     * 空字符串
+     */
     public static final String SYMBOL_BLANK = "";
-    /**     空格     */
+    /**
+     * 空格
+     */
     public static final String SYMBOL_SPACE = " ";
-    /**     下划线     */
+    /**
+     * 下划线
+     */
     public static final String SYMBOL_UNDERLINE = "_";
-    /**     '*'号     */
+    /**
+     * '*'号
+     */
     public static final String SYMBOL_STAR = "*";
-    /**     '+'号     */
+    /**
+     * '+'号
+     */
     public static final String SYMBOL_ADD = "+";
-    /**     '|'号     */
+    /**
+     * '|'号
+     */
     public static final String SYMBOL_COLON = "|";
-    /**     '||'号     */
+    /**
+     * '||'号
+     */
     public static final String SYMBOL_DOUBLECOLON = "||";
-    /**     '\\|'号     */
+    /**
+     * '\\|'号
+     */
     public static final String SYMBOL_COLONCHECK = "\\|";
-    /**     '\\|\\|'号     */
+    /**
+     * '\\|\\|'号
+     */
     public static final String SYMBOL_DOUBLECOLONCHECK = "\\|\\|";
-    /**     '.'号     */
+    /**
+     * '.'号
+     */
     public static final String SYMBOL_POINT = ".";
-    /**     逗号     */
+    /**
+     * 逗号
+     */
     public static final String SYMBOL_COMMA = ",";
-    /**     '/'号     */
+    /**
+     * '/'号
+     */
     public static final String SYMBOL_SLASH = "/";
-    /**     '\\'号     */
+    /**
+     * '\\'号
+     */
     public static final String SYMBOL_UNTISLASH = "\\";
-    /**     '\\'号     */
+    /**
+     * '\\'号
+     */
     public static final String SYMBOL_LEFTBRACKET = "(";
-    /**     ')'号     */
+    /**
+     * ')'号
+     */
     public static final String SYMBOL_RIGHTBRACKET = ")";
-    /**     '='号     */
+    /**
+     * '='号
+     */
     public static final String SYMBOL_EQUALS = "=";
-    /**     '!='号     */
+    /**
+     * '!='号
+     */
     public static final String SYMBOL_NOTEQUALS = "!=";
-    /**     ';'号     */
+    /**
+     * ';'号
+     */
     public static final String SYMBOL_SEMICOLON = ";";
-    /**     '0'号     */
+    /**
+     * '0'号
+     */
     public static final String SYMBOL_ZERO = "0";
-    /**     '1'号     */
+    /**
+     * '1'号
+     */
     public static final String SYMBOL_ONE = "1";
-    /**     '2'号     */
+    /**
+     * '2'号
+     */
     public static final String SYMBOL_TWO = "2";
-    /**     '3'号     */
+    /**
+     * '3'号
+     */
     public static final String SYMBOL_THREE = "3";
-    /**     '4'号     */
+    /**
+     * '4'号
+     */
     public static final String SYMBOL_FOUR = "4";
-    /**     '5'号     */
+    /**
+     * '5'号
+     */
     public static final String SYMBOL_FIVE = "5";
-    /**     '6'号     */
+    /**
+     * '6'号
+     */
     public static final String SYMBOL_SIX = "6";
-    /**     '<='号     */
+    /**
+     * '<='号
+     */
     public static final String SYMBOL_LESSOREQUALS = "<=";
-    /**     '>='号     */
+    /**
+     * '>='号
+     */
     public static final String SYMBOL_GREATEROREQUALS = ">=";
-    /**     '<'号     */
+    /**
+     * '<'号
+     */
     public static final String SYMBOL_LESSTHAN = "<";
-    /**     '>'号     */
+    /**
+     * '>'号
+     */
     public static final String SYMBOL_GREATERTHAN = ">";
-    /**     '<'号     */
+    /**
+     * '<'号
+     */
     public static final String SYMBOL_ANGELBRACKETLEFT = "<";
-    /**     '>'号     */
+    /**
+     * '>'号
+     */
     public static final String SYMBOL_ANGELBRACKETRIGHT = ">";
-    /**     '['号     */
+    /**
+     * '['号
+     */
     public static final String SYMBOL_SQUAREBRACKETLEFT = "[";
-    /**     ']'号     */
+    /**
+     * ']'号
+     */
     public static final String SYMBOL_SQUAREBRACKETRIGHT = "]";
-    /**     './'号     */
+    /**
+     * './'号
+     */
     public static final String SYMBOL_SEPARATOR = "./";
-    /**     'Y'号     */
+    /**
+     * 'Y'号
+     */
     public static final String SYMBOL_Y = "Y";
-    /**     'N'号     */
+    /**
+     * 'N'号
+     */
     public static final String SYMBOL_N = "N";
-    /**     'Z'号     */
+    /**
+     * 'Z'号
+     */
     public static final String SYMBOL_Z = "Z";
-    /**     '&'号     */
+    /**
+     * '&'号
+     */
     public static final String SYMBOL_AMPERSAND = "&";
-    /**     '?'号     */
+    /**
+     * '?'号
+     */
     public static final String SYMBOL_QUESTION = "?";
-    /**     '%'号     */
+    /**
+     * '%'号
+     */
     public static final String SYMBOL_PERCENTAGE = "%";
-    /**     '@'号     */
+    /**
+     * '@'号
+     */
     public static final String SYMBOL_EMAIL = "@";
-    /**     '\n'号     */
+    /**
+     * '\n'号
+     */
     public static final String SYMBOL_RETURN = "\n";
-    /**     '{'号     */
+    /**
+     * '{'号
+     */
     public static final String SYMBOL_LEFTPARENTHESE = "{";
-    /**     '}'号     */
+    /**
+     * '}'号
+     */
     public static final String SYMBOL_RIGHTPARENTHESE = "}";
-    /**     '\"'号     */
+    /**
+     * '\"'号
+     */
     public static final String SYMBOL_SIGLEREF = "\"";
-    /**     '\''号     */
+    /**
+     * '\''号
+     */
     public static final String SYMBOL_SIGLEREFER = "'";
-    /**     'jpeg'号     */
+    /**
+     * 'jpeg'号
+     */
     public static final String IMAGE_JPEG = "jpeg";
-    /**     'DES'号     */
+    /**
+     * 'DES'号
+     */
     public static final String ALGORITHM = "DES";
-    /**     'DESede'号     */
+    /**
+     * 'DESede'号
+     */
     public static final String DESEDE_ALGORITHM = "DESede";
-    /**     'DESede/ECB/PKCS5Padding'号     */
+    /**
+     * 'DESede/ECB/PKCS5Padding'号
+     */
     public static final String CIPHER_ALGORITHM = "DESede/ECB/PKCS5Padding";
 
-    private SpecharsUtil() {}
+    private SpecharsUtil() {
+    }
 
 }

@@ -19,12 +19,12 @@ public class ExcelExportDto implements Serializable {
     private Map maps;
     private List list;
 
-    public ExcelExportDto(){
+    public ExcelExportDto() {
 
     }
 
 
-    public ExcelExportDto( Map maps,List list,String fileName){
+    public ExcelExportDto(Map maps, List list, String fileName) {
         this.fileName = fileName;
         this.list = list;
         this.maps = maps;

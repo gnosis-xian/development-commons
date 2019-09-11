@@ -31,6 +31,7 @@ import java.util.List;
  * <pre>
  * 获取本机IP
  * </pre>
+ *
  * @author yto.net.cn
  * @since 1.0.0
  */
@@ -39,7 +40,8 @@ public final class IpUtil {
 
     private static List<String> IP_LIST;
 
-    private IpUtil() {}
+    private IpUtil() {
+    }
 
     /**
      * 获取本机IP

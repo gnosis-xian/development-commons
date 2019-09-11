@@ -27,17 +27,19 @@ import java.util.Map;
  * 名称: DateUtil
  * 描述: 判空工具类
  * </pre>
+ *
  * @author yto.net.cn
  * @since 1.0.0
  */
 public final class EmptyUtils {
 
-    private EmptyUtils() {}
+    private EmptyUtils() {
+    }
 
     /**
      * 判断集合是否为空 coll->null->true coll-> coll.size() == 0 -> true
      *
-     * @param <T> 类型
+     * @param <T>  类型
      * @param coll 集合
      * @return 空返回true, 否者返回flase
      */
@@ -48,7 +50,7 @@ public final class EmptyUtils {
     /**
      * 判断集合是否不为空
      *
-     * @param <T> 类型
+     * @param <T>  类型
      * @param coll 集合
      * @return 非空返回true, 否者返回flase
      */
@@ -84,7 +86,7 @@ public final class EmptyUtils {
      * 判断一个对象是否为空
      *
      * @param <T> 类型
-     * @param t 对象实例
+     * @param t   对象实例
      * @return 空返回true, 否者返回flase
      */
     public static <T> boolean isEmpty(final T t) {
@@ -99,7 +101,8 @@ public final class EmptyUtils {
 
     /**
      * 判断数组是否不为空
-     * @param <T> 类型
+     *
+     * @param <T>   类型
      * @param datas 数组实例
      * @return 非空返回true, 否者返回flase
      */
@@ -109,7 +112,8 @@ public final class EmptyUtils {
 
     /**
      * 判断数组是否不为空
-     * @param <T> 类型
+     *
+     * @param <T>   类型
      * @param datas 数组实例
      * @return 空返回true, 否者返回flase
      */
@@ -121,7 +125,7 @@ public final class EmptyUtils {
      * 判断一个对象是否不为空
      *
      * @param <T> 类型
-     * @param t 对象实例
+     * @param t   对象实例
      * @return 非空返回true, 否者返回flase
      */
     public static <T> boolean isNotEmpty(final T t) {
@@ -135,7 +139,7 @@ public final class EmptyUtils {
      * 可以简化为：
      * if (EmptyUtils.hasNull(parameter1, parameter2,parameter3))
      *
-     * @param <T> 类型
+     * @param <T>   类型
      * @param datas 数组
      * @return 包含null返回true, 否者返回flase
      */

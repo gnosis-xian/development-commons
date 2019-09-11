@@ -1,0 +1,229 @@
+package top.agno.gnosis.utils.mail;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.core.io.ClassPathResource;
+import org.springframework.mail.javamail.JavaMailSenderImpl;
+import org.springframework.mail.javamail.MimeMessageHelper;
+import org.springframework.stereotype.Component;
+
+import javax.mail.MessagingException;
+import javax.mail.internet.MimeMessage;
+import java.io.IOException;
+import java.text.MessageFormat;
+import java.util.List;
+import java.util.Properties;
+
+/**
+ * @author gaojing [gaojing1996@vip.qq.com]
+ */
+@Component
+public class MimeMail {
+
+    @Qualifier(value = "163MailSender")
+    @Autowired(required = false)
+    private JavaMailSenderImpl mailSender163;
+
+    @Qualifier(value = "qqMailSender")
+    @Autowired(required = false)
+    private JavaMailSenderImpl qqMailSender;
+
+    private JavaMailSenderImpl mailSender = null;
+
+    private static final String DONOTREPLY = "<p>本邮件自动发送，请勿回复</p>";
+
+    /**
+     * common mail 本方法抽取出发送邮件公共部分，只需传入必要的三个信息即可发送邮件</br>
+     * <strong>不要直接调用此方法</strong> 请调用重载方法 sendMail(List<String> to,String
+     * subject,String Text)
+     *
+     * @param to      收件人地址，List接口形式，支持群发
+     * @param subject 邮件主题
+     * @param Text    邮件内容（邮件的尾巴部分会自动补上）
+     * @param retry   是否是重新尝试
+     * @return boolean 是否发送成功
+     * @throws MessagingException          邮件发送异常
+     * @throws UnknownMailAddressException 自定义异常
+     */
+    private boolean sendMail(List<String> to, String subject, String Text, boolean retry)
+            throws UnknownMailAddressException {
+        // 合法性检查
+        for (String stringto : to) {
+            if (!MailUtil.isMailAddr(stringto)) {
+                throw new UnknownMailAddressException();
+            }
+        }
+        // retry -尝试使用QQ Mail重发
+        if (retry || (mailSender163 == null)) {
+            mailSender = qqMailSender;
+        } else {
+            mailSender = mailSender163;
+            // 不是retry,给自己抄送一份 解决554 DT:SPM 异常
+            // 这一方法最近可能已经失效，不需要的可以自己删除下面这一行
+            to.add(mailSender.getUsername());
+        }
+
+        MimeMessage mimeMessage = null;
+        try {
+            mimeMessage = mailSender.createMimeMessage();
+            MimeMessageHelper messageHelper = new MimeMessageHelper(mimeMessage, true);
+            // 注意下面的是Text+something,Text是传入的等待发送的内容，后面部分是固定格式，比如说“本邮件自动发送，请勿回复”
+            // 可以根据需要自行更改固定内容
+            String formatText = Text + DONOTREPLY;
+            // 这个是附带发送的图片。不需要可以去掉，但是需要把固定内容的cid:img一起去掉，这是标志位
+            String[] toArray = new String[to.size()];
+            to.toArray(toArray);
+            messageHelper.setFrom(mailSender.getUsername());
+            messageHelper.setBcc(toArray);
+            messageHelper.setSubject(subject);
+            messageHelper.setText(formatText, true);
+            // 下面两行可以附带发送的图片
+//			ClassPathResource resource=new ClassPathResource("hawk_logo2.png");
+//			messageHelper.addInline("img", resource);
+            // 下面一行可以添加附件
+//			messageHelper.addAttachment(attachmentFilename, file);
+            mailSender.send(mimeMessage);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+            if (!retry) {
+                sendMail(to, subject, Text, true);
+            } else {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    /**
+     * common mail 重载方法，其他方法调用此方法来实现send mail<br/>
+     * <strong>发邮件的所有方法必须调用此方法来发送！！！</strong></br>
+     * 如果你配置了两个mailSender，将会自动切换发送，若只有一个，请务必修改将不用的发送器从spring-mailx.xml中删除
+     *
+     * @param to      收件人地址，List接口形式，支持群发
+     * @param subject 邮件主题
+     * @param Text    邮件内容（邮件的尾巴部分会自动补上），可以去上面的重载方法自行定制尾巴
+     * @return boolean 是否发送成功
+     * @throws UnknownMailAddressException
+     */
+    public boolean sendMail(List<String> to, String subject, String Text) throws UnknownMailAddressException {
+        return sendMail(to, subject, Text, false);
+    }
+
+    /**
+     * send verification code 发送验证码，使用到common mail
+     *
+     * @param to  收件人地址，List接口形式，支持群发
+     * @param num 验证码随机数的位数
+     * @return vCode 生成的验证码
+     * @throws MessagingException          邮件发送异常
+     * @throws UnknownMailAddressException 自定义异常
+     */
+    public String sendVCode(List<String> to, int num) throws MessagingException, UnknownMailAddressException {
+        String vCode = MailUtil.getVCode(num);
+        String formatText = MessageFormat.format("<h2>你的验证码是：{0}</h2>", vCode);
+        this.sendMail(to, "Hawk:验证码在此，请查收", formatText);
+        return vCode;
+    }
+
+    public JavaMailSenderImpl getMailSender163() {
+        return mailSender163;
+    }
+
+    public void setMailSender163(JavaMailSenderImpl mailSender163) {
+        this.mailSender163 = mailSender163;
+    }
+
+    public JavaMailSenderImpl getQqMailSender() {
+        return qqMailSender;
+    }
+
+    public void setQqMailSender(JavaMailSenderImpl qqMailSender) {
+        this.qqMailSender = qqMailSender;
+    }
+
+    public JavaMailSenderImpl getMailSender() {
+        return mailSender;
+    }
+
+    public void setMailSender(JavaMailSenderImpl mailSender) {
+        this.mailSender = mailSender;
+    }
+
+    public static class Builder {
+        private static MimeMail mimeMail = null;
+
+        private Builder() {
+            // TODO Auto-generated constructor stub
+        }
+
+        /**
+         * 不使用自带Spring容器的情况下获取MailSender实例<br/>
+         * <strong>最简单的方式，无需修改配置</strong>
+         *
+         * @param host               邮箱服务器 如：smtp.163.com
+         * @param protocol           mail.protocol 如：smtp
+         * @param port               邮箱服务器端口号 如：465
+         * @param username           邮箱账号 如：xxxxxxx@163.com
+         * @param password           邮箱授权码 -
+         * @param smtpStarttlsEnable 163邮箱建议设置 false
+         * @return
+         */
+        public static MimeMail initMailSender(String host, String protocol, Integer port, String username,
+                                              String password, Boolean smtpStarttlsEnable) {
+            if (Builder.mimeMail == null) {
+                synchronized (Builder.class) {
+                    if (Builder.mimeMail == null) {
+                        JavaMailSenderImpl javaMailSenderImpl = new JavaMailSenderImpl();
+                        loadSenderProperties(javaMailSenderImpl, host, protocol, port, username, password);
+                        javaMailSenderImpl.setJavaMailProperties(loadBasicProperties(smtpStarttlsEnable));
+                        MimeMail mimeMail = new MimeMail();
+                        mimeMail.setQqMailSender(javaMailSenderImpl);
+                        Builder.mimeMail = mimeMail;
+                    }
+                }
+            }
+            return mimeMail;
+        }
+
+        /**
+         * 不使用自带Spring容器的情况下获取MailSender实例<br/>
+         * <strong>需要更改mail.properties最下面的配置</strong><br/>
+         *
+         * @return
+         * @throws IOException
+         */
+        public static MimeMail initMailSenderWithProperties() throws IOException {
+            Properties properties = new Properties();
+            ClassPathResource resource = new ClassPathResource("mail.properties");
+            properties.load(resource.getInputStream());
+            JavaMailSenderImpl javaMailSenderImpl = new JavaMailSenderImpl();
+            loadSenderProperties(javaMailSenderImpl, properties.getProperty("mail.host"),
+                    properties.getProperty("mail.protocol"), Integer.parseInt(properties.get("mail.port").toString()),
+                    properties.getProperty("mail.username"), properties.getProperty("mail.password"));
+            javaMailSenderImpl.setJavaMailProperties(properties);
+            MimeMail mimeMail = new MimeMail();
+            mimeMail.setQqMailSender(javaMailSenderImpl);
+            return mimeMail;
+        }
+
+        private static void loadSenderProperties(JavaMailSenderImpl javaMailSenderImpl, String host, String protocol,
+                                                 Integer port, String userName, String passWord) {
+            javaMailSenderImpl.setHost(host);
+            javaMailSenderImpl.setProtocol(protocol);
+            javaMailSenderImpl.setPort(port);
+            javaMailSenderImpl.setUsername(userName);
+            javaMailSenderImpl.setPassword(passWord);
+            javaMailSenderImpl.setDefaultEncoding("UTF-8");
+        }
+
+        private static Properties loadBasicProperties(Boolean smtpStarttlsEnable) {
+            Properties properties = new Properties();
+            properties.put("mail.smtp.starttls.enable", smtpStarttlsEnable);// 163邮箱推荐false
+            properties.put("mail.smtp.auth", "true");
+            properties.put("mail.smtp.timeout", 25000);
+            properties.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
+            return properties;
+        }
+    }
+}

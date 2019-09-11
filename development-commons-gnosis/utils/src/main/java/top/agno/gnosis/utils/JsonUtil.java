@@ -34,6 +34,7 @@ import java.util.Map;
  * 名称: JsonUtil
  * 描述: Json工具类处理
  * </pre>
+ *
  * @author yto.net.cn
  * @since 1.0.0
  */
@@ -45,11 +46,13 @@ public final class JsonUtil implements java.io.Serializable {
         JSON.DEFFAULT_DATE_FORMAT = DateUtil.HUJIANG_DATE_FORMAT;
     }
 
-    private JsonUtil() {}
+    private JsonUtil() {
+    }
 
     /**
      * 对象转json
-     * @param obj 对象
+     *
+     * @param obj               对象
      * @param serializerFeature 序列化特性
      * @return String str
      */
@@ -62,13 +65,14 @@ public final class JsonUtil implements java.io.Serializable {
 
     /**
      * 对象转json
-     * @param obj 对象
-     * @param serializeConfig 序列化配置
+     *
+     * @param obj               对象
+     * @param serializeConfig   序列化配置
      * @param serializerFeature 序列化特性
      * @return String str
      */
     public static String object2JSON(final Object obj, final SerializeConfig serializeConfig,
-            final SerializerFeature... serializerFeature) {
+                                     final SerializerFeature... serializerFeature) {
         if (obj == null) {
             return "{}";
         }
@@ -77,6 +81,7 @@ public final class JsonUtil implements java.io.Serializable {
 
     /**
      * 对象转json
+     *
      * @param obj 对象
      * @return String str
      */
@@ -89,9 +94,10 @@ public final class JsonUtil implements java.io.Serializable {
 
     /**
      * json转对象
-     * @param json json字符串
+     *
+     * @param json  json字符串
      * @param clazz 类型
-     * @param <T> 泛型
+     * @param <T>   泛型
      * @return T 对象实例
      */
     public static <T> T json2Object(final String json, final Class<T> clazz) {
@@ -103,9 +109,10 @@ public final class JsonUtil implements java.io.Serializable {
 
     /**
      * json转对象
-     * @param json json字符串
+     *
+     * @param json      json字符串
      * @param reference 类型
-     * @param <T> 泛型
+     * @param <T>       泛型
      * @return T 对象实例
      */
     public static <T> T json2Reference(final String json, final TypeReference<T> reference) {
@@ -117,10 +124,11 @@ public final class JsonUtil implements java.io.Serializable {
 
     /**
      * json转对象
-     * @param json json字符串
-     * @param type 类型
+     *
+     * @param json     json字符串
+     * @param type     类型
      * @param features 特性
-     * @param <T> 泛型
+     * @param <T>      泛型
      * @return T 对象实例
      */
     public static <T> T json2Reference(final String json, final Type type, final Feature... features) {
@@ -132,7 +140,8 @@ public final class JsonUtil implements java.io.Serializable {
 
     /**
      * json转Map
-     * @param json json字符串
+     *
+     * @param json     json字符串
      * @param features 特性
      * @return Map实例
      */
@@ -147,10 +156,11 @@ public final class JsonUtil implements java.io.Serializable {
 
     /**
      * json转对象
-     * @param json json字符串
+     *
+     * @param json      json字符串
      * @param reference 类型
-     * @param features 特性
-     * @param <T> 泛型
+     * @param features  特性
+     * @param <T>       泛型
      * @return T 对象实例
      */
     public static <T> T json2Reference(final String json, final TypeReference<T> reference, final Feature... features) {
@@ -162,8 +172,9 @@ public final class JsonUtil implements java.io.Serializable {
 
     /**
      * 字节反序列化
+     *
      * @param bytes 字节数组
-     * @param <T> 泛型
+     * @param <T>   泛型
      * @return T 对象实例
      */
     public static <T> T deserialize(final byte[] bytes) {
@@ -176,7 +187,8 @@ public final class JsonUtil implements java.io.Serializable {
 
     /**
      * 对象序列化
-     * @param t 对象实例
+     *
+     * @param t   对象实例
      * @param <T> 泛型
      * @return byte[]字节数据
      */
@@ -189,6 +201,7 @@ public final class JsonUtil implements java.io.Serializable {
 
     /**
      * fastjson 转成实体类
+     *
      * @param cls        类型
      * @param jsonString json字符串
      * @param <T>        集合类型
@@ -201,6 +214,7 @@ public final class JsonUtil implements java.io.Serializable {
 
     /**
      * fastjson 将实体类转成json
+     *
      * @param obj 对象
      * @return String json字符串
      */

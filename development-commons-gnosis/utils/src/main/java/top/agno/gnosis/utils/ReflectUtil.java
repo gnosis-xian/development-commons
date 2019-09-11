@@ -30,17 +30,20 @@ import java.util.List;
  * 名称: ReflectUtil
  * 描述: 反射工具类
  * </pre>
+ *
  * @author yto.net.cn
  * @since 1.0.0
  */
 @Slf4j
 public final class ReflectUtil {
 
-    private ReflectUtil() {}
+    private ReflectUtil() {
+    }
 
     /**
      * 获取类属性
-     * @param obj 类
+     *
+     * @param obj       类
      * @param fieldName 属性
      * @return 返回类属性
      */
@@ -61,8 +64,9 @@ public final class ReflectUtil {
 
     /**
      * 获取类属性
+     *
      * @param targetClass 目标类
-     * @param fieldName 属性名
+     * @param fieldName   属性名
      * @return 返回类属性
      */
     public static Field getTargetField(final Class<?> targetClass, final String fieldName) {
@@ -90,9 +94,10 @@ public final class ReflectUtil {
 
     /**
      * 设置属性值
-     * @param obj 目标类
+     *
+     * @param obj       目标类
      * @param fieldName 属性名
-     * @param value 值
+     * @param value     值
      */
     public static void setFieldValue(final Object obj, final String fieldName, final Object value) {
         if (null == obj) {
@@ -133,6 +138,7 @@ public final class ReflectUtil {
 
     /**
      * 实例化
+     *
      * @param clazz  类型
      * @param params 参数
      * @param <T>    返回类型
@@ -181,7 +187,7 @@ public final class ReflectUtil {
      * 实例化对象
      *
      * @param clazz 类
-     * @param <T> 返回类型
+     * @param <T>   返回类型
      * @return 对象
      */
     public static <T> T newInstance(final Class<T> clazz) {
@@ -209,8 +215,8 @@ public final class ReflectUtil {
     /**
      * 加载类
      *
-     * @param <T> 返回类型
-     * @param className 类名
+     * @param <T>           返回类型
+     * @param className     类名
      * @param isInitialized 是否初始化
      * @return 类
      */
@@ -228,7 +234,7 @@ public final class ReflectUtil {
     /**
      * 加载类并初始化
      *
-     * @param <T> 返回类型
+     * @param <T>       返回类型
      * @param className 类名
      * @return 类
      */
@@ -256,7 +262,7 @@ public final class ReflectUtil {
     /**
      * 获取所有的成员变量(通过GET，SET方法获取)
      *
-     * @param <T> 返回类型
+     * @param <T>   返回类型
      * @param clazz 类型
      * @return 成员变量数组
      */
@@ -275,8 +281,8 @@ public final class ReflectUtil {
     /**
      * 获取所有的成员变量,包括父类
      *
-     * @param <T> 返回类型
-     * @param clazz 类型
+     * @param <T>        返回类型
+     * @param clazz      类型
      * @param superClass 是否包括父类
      * @return 成员变量数组，包括父类的
      * @throws Exception 异常
@@ -314,9 +320,10 @@ public final class ReflectUtil {
 
     /**
      * 获取所有的成员变量,包括父类
-     * @param <T> 返回类型
+     *
+     * @param <T>   返回类型
      * @param clazz 类型
-     * @return 所有的成员变量,包括父类
+     * @return 所有的成员变量, 包括父类
      * @throws Exception 异常
      */
     public static <T> Field[] getClassFieldsAndSuperClassFields(final Class<T> clazz) throws Exception {

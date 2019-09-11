@@ -33,12 +33,12 @@ public class ObjectUtil {
      * </p>
      */
     public static final Object NULL = new Serializable() {
-                                        private static final long serialVersionUID = 7092611880189329093L;
+        private static final long serialVersionUID = 7092611880189329093L;
 
-                                        private Object readResolve() {
-                                            return NULL;
-                                        }
-                                    };
+        private Object readResolve() {
+            return NULL;
+        }
+    };
 
     /* ============================================================================ */
     /*  默认值函数。                                                                */
@@ -56,9 +56,8 @@ public class ObjectUtil {
      * ObjectUtil.defaultIfNull(Boolean.TRUE, *) = Boolean.TRUE
      * </pre>
      *
-     * @param object 要测试的对象
+     * @param object       要测试的对象
      * @param defaultValue 默认值
-     *
      * @return 对象本身或默认对象
      */
     public static Object defaultIfNull(Object object, Object defaultValue) {
@@ -90,7 +89,6 @@ public class ObjectUtil {
      *
      * @param object1 对象1
      * @param object2 对象2
-     *
      * @return 如果相等, 则返回<code>true</code>
      */
     public static boolean equals(Object object1, Object object2) {
@@ -111,7 +109,6 @@ public class ObjectUtil {
      * </p>
      *
      * @param object 对象
-     *
      * @return hash值
      */
     public static int hashCode(Object object) {
@@ -126,7 +123,6 @@ public class ObjectUtil {
      * </p>
      *
      * @param object 对象
-     *
      * @return hash值
      */
     public static int identityHashCode(Object object) {
@@ -148,7 +144,6 @@ public class ObjectUtil {
      * </pre>
      *
      * @param object 对象
-     *
      * @return 对象的identity，如果对象是<code>null</code>，则返回<code>null</code>
      */
     public static String identityToString(Object object) {
@@ -169,9 +164,8 @@ public class ObjectUtil {
      * ObjectUtil.identityToString(new Object[0], "NULL")   = "java.lang.Object[]@7fa"
      * </pre>
      *
-     * @param object 对象
+     * @param object  对象
      * @param nullStr 如果对象为<code>null</code>，则返回该字符串
-     *
      * @return 对象的identity，如果对象是<code>null</code>，则返回指定字符串
      */
     public static String identityToString(Object object, String nullStr) {
@@ -195,7 +189,6 @@ public class ObjectUtil {
      *
      * @param buffer <code>StringBuffer</code>对象，如果是<code>null</code>，则创建新的
      * @param object 对象
-     *
      * @return <code>StringBuffer</code>对象，如果对象为<code>null</code>，则返回<code>null</code>
      */
     public static StringBuffer appendIdentityToString(StringBuffer buffer, Object object) {
@@ -226,7 +219,6 @@ public class ObjectUtil {
      * </p>
      *
      * @param array 要复制的数组
-     *
      * @return 数组的复本，如果原始数组为<code>null</code>，则返回<code>null</code>
      */
     public static Object clone(Object array) {
@@ -274,7 +266,7 @@ public class ObjectUtil {
         // Not cloneable
         if (!(array instanceof Cloneable)) {
             throw new RuntimeException("Object of class " + array.getClass().getName()
-                                       + " is not Cloneable");
+                    + " is not Cloneable");
         }
 
         // 用reflection调用clone方法
@@ -304,7 +296,6 @@ public class ObjectUtil {
      *
      * @param object1 对象1
      * @param object2 对象2
-     *
      * @return 如果两个对象有相同的类型，则返回<code>true</code>
      */
     public static boolean isSameType(Object object1, Object object2) {
@@ -330,12 +321,11 @@ public class ObjectUtil {
      * </pre>
      *
      * @param object 对象
-     *
      * @return 对象的<code>toString()</code>的返回值，或空字符串<code>""</code>
      */
     public static String toString(Object object) {
         return (object == null) ? StringUtil.EMPTY_STRING
-            : (object.getClass().isArray() ? ArrayUtil.toString(object) : object.toString());
+                : (object.getClass().isArray() ? ArrayUtil.toString(object) : object.toString());
     }
 
     /**
@@ -349,31 +339,31 @@ public class ObjectUtil {
      * ObjectUtil.toString([1, 2, 3], "null")    = "[1, 2, 3]"
      * </pre>
      *
-     * @param object 对象
+     * @param object  对象
      * @param nullStr 如果对象为<code>null</code>，则返回该字符串
-     *
      * @return 对象的<code>toString()</code>的返回值，或指定字符串
      */
     public static String toString(Object object, String nullStr) {
         return (object == null) ? nullStr : (object.getClass().isArray() ? ArrayUtil
-            .toString(object) : object.toString());
+                .toString(object) : object.toString());
     }
+
     /**
      * 数字格式化方法 为thyleaf服务
-     * 
+     *
      * @param num
      * @return
      */
-    public static String toNum(Double num){
+    public static String toNum(Double num) {
         java.text.DecimalFormat df = new java.text.DecimalFormat("#.##");
-        try{
-        if(num == null){
+        try {
+            if (num == null) {
+                return "";
+            } else {
+                return df.format(num);
+            }
+        } catch (Exception e) {
             return "";
-        }else{
-            return df.format(num);
-        }
-        }catch(Exception e){
-            return "" ;
         }
     }
 }

@@ -24,16 +24,19 @@ import java.util.concurrent.Callable;
  * <pre>
  * 系统工具类
  * </pre>
+ *
  * @author yto.net.cn
  * @since 1.0.0
  */
 @Slf4j
 public final class AppUtil {
 
-    private AppUtil() {}
+    private AppUtil() {
+    }
 
     /**
      * 获取os的cpu核数
+     *
      * @return cpu核数
      */
     public static int getSystemProcessors() {

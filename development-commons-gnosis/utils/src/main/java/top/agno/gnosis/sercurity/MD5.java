@@ -22,25 +22,39 @@ import java.security.MessageDigest;
  * <pre>
  * MD5加密
  * </pre>
+ *
  * @author yto.net.cn
  * @since 1.0.0
  */
 public final class MD5 {
 
-    /** START: 8 */
+    /**
+     * START: 8
+     */
     public static final int START = 8;
-    /** END: 24 */
+    /**
+     * END: 24
+     */
     public static final int END = 24;
-    /** md5长度：16 */
+    /**
+     * md5长度：16
+     */
     public static final int MIN_MD5_LENGTH = 16;
-    /** md5长度：32 */
+    /**
+     * md5长度：32
+     */
     public static final int MAX_MD5_LENGTH = 32;
-    /** HEX: 0x0f */
+    /**
+     * HEX: 0x0f
+     */
     private static final int HEX = 0x0f;
-    /** RIGHT_MOVE: 4 */
+    /**
+     * RIGHT_MOVE: 4
+     */
     private static final int RIGHT_MOVE = 4;
 
-    private MD5() {}
+    private MD5() {
+    }
 
     /**
      * 对字符串进行MD5进行加密处理

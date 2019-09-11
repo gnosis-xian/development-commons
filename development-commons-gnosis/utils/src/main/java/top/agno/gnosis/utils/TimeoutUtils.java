@@ -23,12 +23,14 @@ import java.util.concurrent.TimeUnit;
  * 名称: TimeoutUtils
  * 描述: 超时工具类
  * </pre>
+ *
  * @author yto.net.cn
  * @since 1.0.0
  */
 public final class TimeoutUtils {
 
-    private TimeoutUtils() {}
+    private TimeoutUtils() {
+    }
 
     /**
      * Converts the given timeout to seconds.

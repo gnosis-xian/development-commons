@@ -31,28 +31,43 @@ import java.security.SecureRandom;
  * 名称: EncryptUtils
  * 描述: 提供部分加密方法
  * </pre>
+ *
  * @author yto.net.cn
  * @since 1.0.0
  */
 public final class EncryptUtils {
 
-    /** 盐长度 : 16*/
+    /**
+     * 盐长度 : 16
+     */
     private static final int SALT_BYTE_LENGTH = 16;
-    /** 16进制 : 16 */
+    /**
+     * 16进制 : 16
+     */
     private static final int HEX = 16;
-    /** ITERATIONS: 1000 */
+    /**
+     * ITERATIONS: 1000
+     */
     private static final int ITERATIONS = 1000;
-    /** SHA: 0xFF  */
+    /**
+     * SHA: 0xFF
+     */
     private static final int SHA_FF = 0xFF;
-    /** SHA: 0x100   */
+    /**
+     * SHA: 0x100
+     */
     private static final int SHA_100 = 0x100;
-    /** PBKDF2 长度: 64 * 8  */
+    /**
+     * PBKDF2 长度: 64 * 8
+     */
     private static final int PBKDF2_LENGTH = 64 * 8;
 
-    private EncryptUtils() {}
+    private EncryptUtils() {
+    }
 
     /**
      * 对字符串进行MD5进行加密处理
+     *
      * @param msg 待加密的字符串
      * @return 加密后字符串
      * @deprecated 弃用
@@ -65,7 +80,8 @@ public final class EncryptUtils {
 
     /**
      * 基本加密处理
-     * @param msg 明文
+     *
+     * @param msg  明文
      * @param type 类型
      * @return 密文
      */
@@ -98,6 +114,7 @@ public final class EncryptUtils {
      * 盐值的原理非常简单，就是先把密码和盐值指定的内容合并在一起，再使用md5对合并后的内容进行演算，
      * 这样一来，就算密码是一个很常见的字符串，再加上用户名，最后算出来的md5值就没那么容易猜出来了。
      * 因为攻击者不知道盐值的值，也很难反算出密码原文。
+     *
      * @param msg 明文
      * @return 加盐密文
      */
@@ -110,6 +127,7 @@ public final class EncryptUtils {
      * SHA（Secure Hash Algorithm，安全散列算法）是消息摘要算法的一种，被广泛认可的MD5算法的继任者。
      * SHA算法家族目前共有SHA-0、SHA-1、SHA-224、SHA-256、SHA-384和SHA-512五种算法，
      * 通常将后四种算法并称为SHA-2算法
+     *
      * @param msg 明文
      * @return 密文
      */
@@ -131,8 +149,9 @@ public final class EncryptUtils {
     }
 
     /**
-     *  标准SHA1算法，不加盐
-     *  sha1 Algorithm without salt
+     * 标准SHA1算法，不加盐
+     * sha1 Algorithm without salt
+     *
      * @param msg 明文
      * @return 密文
      */
@@ -142,6 +161,7 @@ public final class EncryptUtils {
 
     /**
      * PBKDF2加密
+     *
      * @param msg 明文
      * @return 密文
      */
@@ -163,6 +183,7 @@ public final class EncryptUtils {
 
     /**
      * 转化十六进制
+     *
      * @param array
      * @return
      */
@@ -184,6 +205,7 @@ public final class EncryptUtils {
      *    <li>HA-384 (Stronger than SHA-256 – 384 bits Hash)</li>
      *    <li>SHA-512 (Stronger than SHA-384 – 512 bits Hash)</li>
      * </ul>
+     *
      * @return
      */
     private static String getSaltSHA1() {
@@ -202,6 +224,7 @@ public final class EncryptUtils {
      * 盐值的原理非常简单，就是先把密码和盐值指定的内容合并在一起，再使用md5对合并后的内容进行演算，
      * 这样一来，就算密码是一个很常见的字符串，再加上用户名，最后算出来的md5值就没那么容易猜出来了。
      * 因为攻击者不知道盐值的值，也很难反算出密码原文。
+     *
      * @return
      */
     private static String getSalt() {

@@ -30,6 +30,7 @@ import java.security.spec.RSAPublicKeySpec;
  * <pre>
  * RSA加密
  * </pre>
+ *
  * @author yto.net.cn
  * @since 1.0.0
  */
@@ -69,14 +70,15 @@ public final class RSA {
      */
     public static final int KEY_LENGTH = 512;
 
-    private RSA() {}
+    private RSA() {
+    }
 
     /**
      * <p>
      * 私钥加密
      * </p>
      *
-     * @param data 源数据
+     * @param data       源数据
      * @param privateKey 私钥(BASE64编码)
      * @return 字节数组
      */
@@ -112,7 +114,7 @@ public final class RSA {
     /**
      * 获取公钥
      *
-     * @param modulus 密钥modulus值
+     * @param modulus        密钥modulus值
      * @param publicExponent 公钥的Exponent值
      * @return 公钥
      * @throws Exception
@@ -131,7 +133,7 @@ public final class RSA {
     /**
      * 获取私钥
      *
-     * @param modulus 密钥modulus值
+     * @param modulus         密钥modulus值
      * @param privateExponent 私钥的Exponent值
      * @return 私钥
      * @throws Exception 异常

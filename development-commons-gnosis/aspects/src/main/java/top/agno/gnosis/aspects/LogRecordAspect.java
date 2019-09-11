@@ -34,14 +34,14 @@ public class LogRecordAspect {
     @Around("excudeService()")
     public Object doAround(ProceedingJoinPoint pjp) throws Throwable {
         String profilesActive = this.environment.getProperty("spring.profiles.active");
-        String logReqResp = this.environment.getProperty("system.log.request");
+        String logReqResp = this.environment.getProperty("system.log.request.response");
 
         // 如果是生产环境则不打印请求日志
-        if ("prod".equals(profilesActive) || "pro".equals(profilesActive)) {
+        if (IsProcessUtil.isProdEnv(profilesActive)) {
             return pjp.proceed();
         }
         // 如果设置打印请求为false
-        if (logReqResp != null && "false".equals(logReqResp.toLowerCase())) {
+        if (IsProcessUtil.isRequire(logReqResp)) {
             return pjp.proceed();
         }
 

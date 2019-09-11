@@ -31,10 +31,12 @@ import java.util.List;
 @Slf4j
 public final class FileFactoryUtils {
 
-    private FileFactoryUtils() {}
+    private FileFactoryUtils() {
+    }
 
     /**
      * 文件追加内容
+     *
      * @param content  内容
      * @param fileName 文件名称
      */
@@ -68,11 +70,12 @@ public final class FileFactoryUtils {
         }
     }
 
-   /**
-    * 文件追加内容
-    * @param list  内容
-    * @param fileName 文件名称
-    */
+    /**
+     * 文件追加内容
+     *
+     * @param list     内容
+     * @param fileName 文件名称
+     */
     public static void appendMethodB(final List<String> list, final String fileName) {
         if (list == null || list.size() == 0 || StringUtil.isAlphanumeric(fileName)) {
             return;

@@ -18,25 +18,37 @@ public class ClassUtil {
     /* 常量和singleton。                                                            */
     /* ============================================================================ */
 
-    /** 资源文件的分隔符： <code>'/'</code>。 */
-    public static final char   RESOURCE_SEPARATOR_CHAR    = '/';
+    /**
+     * 资源文件的分隔符： <code>'/'</code>。
+     */
+    public static final char RESOURCE_SEPARATOR_CHAR = '/';
 
-    /** Java类名的分隔符： <code>'.'</code>。 */
-    public static final char   PACKAGE_SEPARATOR_CHAR     = '.';
+    /**
+     * Java类名的分隔符： <code>'.'</code>。
+     */
+    public static final char PACKAGE_SEPARATOR_CHAR = '.';
 
-    /** Java类名的分隔符： <code>"."</code>。 */
-    public static final String PACKAGE_SEPARATOR          = String.valueOf(PACKAGE_SEPARATOR_CHAR);
+    /**
+     * Java类名的分隔符： <code>"."</code>。
+     */
+    public static final String PACKAGE_SEPARATOR = String.valueOf(PACKAGE_SEPARATOR_CHAR);
 
-    /** 内联类的分隔符： <code>'$'</code>。 */
-    public static final char   INNER_CLASS_SEPARATOR_CHAR = '$';
+    /**
+     * 内联类的分隔符： <code>'$'</code>。
+     */
+    public static final char INNER_CLASS_SEPARATOR_CHAR = '$';
 
-    /** 内联类的分隔符： <code>"$"</code>。 */
-    public static final String INNER_CLASS_SEPARATOR      = String
-                                                              .valueOf(INNER_CLASS_SEPARATOR_CHAR);
+    /**
+     * 内联类的分隔符： <code>"$"</code>。
+     */
+    public static final String INNER_CLASS_SEPARATOR = String
+            .valueOf(INNER_CLASS_SEPARATOR_CHAR);
 
-    /** 所有类的信息表，包括父类, 接口, 数组的维数等信息。 */
-    private static Map         TYPE_MAP                   = Collections
-                                                              .synchronizedMap(new WeakHashMap());
+    /**
+     * 所有类的信息表，包括父类, 接口, 数组的维数等信息。
+     */
+    private static Map TYPE_MAP = Collections
+            .synchronizedMap(new WeakHashMap());
 
     /* ============================================================================ */
     /* 取得类名和package名的方法。                                                  */
@@ -63,7 +75,6 @@ public class ClassUtil {
      * </p>
      *
      * @param object 要显示类名的对象
-     *
      * @return 用于显示的直观类名，如果原类名为空或非法，则返回 <code>null</code>
      */
     public static String getClassNameForObject(Object object) {
@@ -95,7 +106,6 @@ public class ClassUtil {
      * </p>
      *
      * @param clazz 要显示类名的类
-     *
      * @return 用于显示的直观类名，如果原始类为 <code>null</code> ，则返回 <code>null</code>
      */
     public static String getClassName(Class clazz) {
@@ -127,7 +137,6 @@ public class ClassUtil {
      * </p>
      *
      * @param className 要显示的类名
-     *
      * @return 用于显示的直观类名，如果原类名为 <code>null</code> ，则返回 <code>null</code> ，如果原类名是非法的，则返回原类名
      */
     public static String getClassName(String className) {
@@ -137,9 +146,8 @@ public class ClassUtil {
     /**
      * 取得直观的类名。
      *
-     * @param className 类名
+     * @param className         类名
      * @param processInnerClass 是否将内联类分隔符 <code>'$'</code> 转换成 <code>'.'</code>
-     *
      * @return 直观的类名，或 <code>null</code>
      */
     private static String getClassName(String className, boolean processInnerClass) {
@@ -242,7 +250,6 @@ public class ClassUtil {
      * </p>
      *
      * @param object 要查看的对象
-     *
      * @return 短类名，如果对象为 <code>null</code> ，则返回 <code>null</code>
      */
     public static String getShortClassNameForObject(Object object) {
@@ -268,7 +275,6 @@ public class ClassUtil {
      * </p>
      *
      * @param clazz 要查看的类
-     *
      * @return 短类名，如果类为 <code>null</code> ，则返回 <code>null</code>
      */
     public static String getShortClassName(Class clazz) {
@@ -294,7 +300,6 @@ public class ClassUtil {
      * </p>
      *
      * @param className 要查看的类名
-     *
      * @return 短类名，如果类名为空，则返回 <code>null</code>
      */
     public static String getShortClassName(String className) {
@@ -327,7 +332,6 @@ public class ClassUtil {
      * </p>
      *
      * @param object 要查看的对象
-     *
      * @return package名，如果对象为 <code>null</code> ，则返回 <code>null</code>
      */
     public static String getPackageNameForObject(Object object) {
@@ -346,7 +350,6 @@ public class ClassUtil {
      * </p>
      *
      * @param clazz 要查看的类
-     *
      * @return package名，如果类为 <code>null</code> ，则返回 <code>null</code>
      */
     public static String getPackageName(Class clazz) {
@@ -365,7 +368,6 @@ public class ClassUtil {
      * </p>
      *
      * @param className 要查看的类名
-     *
      * @return package名，如果类名为空，则返回 <code>null</code>
      */
     public static String getPackageName(String className) {
@@ -405,7 +407,6 @@ public class ClassUtil {
      * </p>
      *
      * @param object 要显示类名的对象
-     *
      * @return 指定对象所属类的资源名，如果对象为空，则返回<code>null</code>
      */
     public static String getClassNameForObjectAsResource(Object object) {
@@ -414,7 +415,7 @@ public class ClassUtil {
         }
 
         return object.getClass().getName().replace(PACKAGE_SEPARATOR_CHAR, RESOURCE_SEPARATOR_CHAR)
-               + ".class";
+                + ".class";
     }
 
     /**
@@ -428,7 +429,6 @@ public class ClassUtil {
      * </p>
      *
      * @param clazz 要显示类名的类
-     *
      * @return 指定类的资源名，如果指定类为空，则返回<code>null</code>
      */
     public static String getClassNameAsResource(Class clazz) {
@@ -450,7 +450,6 @@ public class ClassUtil {
      * </p>
      *
      * @param className 要显示的类名
-     *
      * @return 指定类名对应的资源名，如果指定类名为空，则返回<code>null</code>
      */
     public static String getClassNameAsResource(String className) {
@@ -469,7 +468,6 @@ public class ClassUtil {
      * </p>
      *
      * @param object 要查看的对象
-     *
      * @return package名，如果对象为 <code>null</code> ，则返回 <code>null</code>
      */
     public static String getPackageNameForObjectAsResource(Object object) {
@@ -478,7 +476,7 @@ public class ClassUtil {
         }
 
         return getPackageNameForObject(object).replace(PACKAGE_SEPARATOR_CHAR,
-            RESOURCE_SEPARATOR_CHAR);
+                RESOURCE_SEPARATOR_CHAR);
     }
 
     /**
@@ -489,7 +487,6 @@ public class ClassUtil {
      * </p>
      *
      * @param clazz 要查看的类
-     *
      * @return package名，如果类为 <code>null</code> ，则返回 <code>null</code>
      */
     public static String getPackageNameAsResource(Class clazz) {
@@ -508,7 +505,6 @@ public class ClassUtil {
      * </p>
      *
      * @param className 要查看的类名
-     *
      * @return package名，如果类名为空，则返回 <code>null</code>
      */
     public static String getPackageNameAsResource(String className) {
@@ -527,8 +523,7 @@ public class ClassUtil {
      * 取得指定维数的 <code>Array</code>类.
      *
      * @param componentType 数组的基类
-     * @param dimension 维数，如果小于 <code>0</code> 则看作 <code>0</code>
-     *
+     * @param dimension     维数，如果小于 <code>0</code> 则看作 <code>0</code>
      * @return 如果维数为0, 则返回基类本身, 否则返回数组类，如果数组的基类为 <code>null</code> ，则返回 <code>null</code>
      */
     public static Class getArrayClass(Class componentType, int dimension) {
@@ -547,7 +542,6 @@ public class ClassUtil {
      * 取得数组元素的类型。
      *
      * @param type 要查找的类
-     *
      * @return 如果是数组, 则返回数组元素的类型, 否则返回 <code>null</code>
      */
     public static Class getArrayComponentType(Class type) {
@@ -562,7 +556,6 @@ public class ClassUtil {
      * 取得数组的维数。
      *
      * @param clazz 要查找的类
-     *
      * @return 数组的维数. 如果不是数组, 则返回 <code>0</code> ，如果数组为 <code>null</code> ，是返回 <code>-1</code>
      */
     public static int getArrayDimension(Class clazz) {
@@ -625,7 +618,7 @@ public class ClassUtil {
      * <code>java.lang.Object</code>
      * </li>
      * </ol>
-     *
+     * <p>
      * 注意，原子类型及其数组，将被转换成相应的包装类来处理。 例如： <code>ClassUtil.getSuperclasses(int[][].class)</code>
      * 返回以下列表：
      *
@@ -646,7 +639,6 @@ public class ClassUtil {
      * </p>
      *
      * @param clazz 要查找的类
-     *
      * @return 所有父类的列表，如果指定类为 <code>null</code> ，则返回 <code>null</code>
      */
     public static List getSuperclasses(Class clazz) {
@@ -723,7 +715,6 @@ public class ClassUtil {
      * </p>
      *
      * @param clazz 要查找的类
-     *
      * @return 所有接口的列表，如果指定类为 <code>null</code> ，则返回 <code>null</code>
      */
     public static List getInterfaces(Class clazz) {
@@ -738,7 +729,6 @@ public class ClassUtil {
      * 判断指定类是否为内联类。
      *
      * @param clazz 要查找的类
-     *
      * @return 如果是，则返回 <code>true</code>
      */
     public static boolean isInnerClass(Class clazz) {
@@ -789,9 +779,8 @@ public class ClassUtil {
      * </ol>
      * </p>
      *
-     * @param classes 目标类型列表，如果是 <code>null</code> 总是返回 <code>false</code>
+     * @param classes     目标类型列表，如果是 <code>null</code> 总是返回 <code>false</code>
      * @param fromClasses 参数类型列表， <code>null</code> 表示可赋值给任意非原子类型
-     *
      * @return 如果可以被赋值，则返回 <code>true</code>
      */
     public static boolean isAssignable(Class[] classes, Class[] fromClasses) {
@@ -855,9 +844,8 @@ public class ClassUtil {
      * </ol>
      * </p>
      *
-     * @param clazz 目标类型，如果是 <code>null</code> 总是返回 <code>false</code>
+     * @param clazz     目标类型，如果是 <code>null</code> 总是返回 <code>false</code>
      * @param fromClass 参数类型， <code>null</code> 表示可赋值给任意非原子类型
-     *
      * @return 如果可以被赋值，则返回 <code>null</code>
      */
     public static boolean isAssignable(Class clazz, Class fromClass) {
@@ -896,45 +884,45 @@ public class ClassUtil {
             // short可以接受：short, byte
             if (Short.TYPE.equals(clazz)) {
                 return Short.class.equals(fromClass) || Byte.TYPE.equals(fromClass)
-                       || Byte.class.equals(fromClass);
+                        || Byte.class.equals(fromClass);
             }
 
             // int可以接受：int、byte、short、char
             if (Integer.TYPE.equals(clazz)) {
                 return Integer.class.equals(fromClass) || Byte.TYPE.equals(fromClass)
-                       || Byte.class.equals(fromClass) || Short.TYPE.equals(fromClass)
-                       || Short.class.equals(fromClass) || Character.TYPE.equals(fromClass)
-                       || Character.class.equals((fromClass));
+                        || Byte.class.equals(fromClass) || Short.TYPE.equals(fromClass)
+                        || Short.class.equals(fromClass) || Character.TYPE.equals(fromClass)
+                        || Character.class.equals((fromClass));
             }
 
             // long可以接受：long、int、byte、short、char
             if (Long.TYPE.equals(clazz)) {
                 return Long.class.equals(fromClass) || Integer.TYPE.equals(fromClass)
-                       || Integer.class.equals(fromClass) || Byte.TYPE.equals(fromClass)
-                       || Byte.class.equals(fromClass) || Short.TYPE.equals(fromClass)
-                       || Short.class.equals(fromClass) || Character.TYPE.equals(fromClass)
-                       || Character.class.equals((fromClass));
+                        || Integer.class.equals(fromClass) || Byte.TYPE.equals(fromClass)
+                        || Byte.class.equals(fromClass) || Short.TYPE.equals(fromClass)
+                        || Short.class.equals(fromClass) || Character.TYPE.equals(fromClass)
+                        || Character.class.equals((fromClass));
             }
 
             // float可以接受：float, long, int, byte, short, char
             if (Float.TYPE.equals(clazz)) {
                 return Float.class.equals(fromClass) || Long.TYPE.equals(fromClass)
-                       || Long.class.equals(fromClass) || Integer.TYPE.equals(fromClass)
-                       || Integer.class.equals(fromClass) || Byte.TYPE.equals(fromClass)
-                       || Byte.class.equals(fromClass) || Short.TYPE.equals(fromClass)
-                       || Short.class.equals(fromClass) || Character.TYPE.equals(fromClass)
-                       || Character.class.equals((fromClass));
+                        || Long.class.equals(fromClass) || Integer.TYPE.equals(fromClass)
+                        || Integer.class.equals(fromClass) || Byte.TYPE.equals(fromClass)
+                        || Byte.class.equals(fromClass) || Short.TYPE.equals(fromClass)
+                        || Short.class.equals(fromClass) || Character.TYPE.equals(fromClass)
+                        || Character.class.equals((fromClass));
             }
 
             // double可以接受：double, float, long, int, byte, short, char
             if (Double.TYPE.equals(clazz)) {
                 return Double.class.equals(fromClass) || Float.TYPE.equals(fromClass)
-                       || Float.class.equals(fromClass) || Long.TYPE.equals(fromClass)
-                       || Long.class.equals(fromClass) || Integer.TYPE.equals(fromClass)
-                       || Integer.class.equals(fromClass) || Byte.TYPE.equals(fromClass)
-                       || Byte.class.equals(fromClass) || Short.TYPE.equals(fromClass)
-                       || Short.class.equals(fromClass) || Character.TYPE.equals(fromClass)
-                       || Character.class.equals((fromClass));
+                        || Float.class.equals(fromClass) || Long.TYPE.equals(fromClass)
+                        || Long.class.equals(fromClass) || Integer.TYPE.equals(fromClass)
+                        || Integer.class.equals(fromClass) || Byte.TYPE.equals(fromClass)
+                        || Byte.class.equals(fromClass) || Short.TYPE.equals(fromClass)
+                        || Short.class.equals(fromClass) || Character.TYPE.equals(fromClass)
+                        || Character.class.equals((fromClass));
             }
         }
 
@@ -945,7 +933,6 @@ public class ClassUtil {
      * 取得指定类的 <code>TypeInfo</code>。
      *
      * @param type 指定类或接口
-     *
      * @return <code>TypeInfo</code> 对象.
      */
     protected static TypeInfo getTypeInfo(Class type) {
@@ -973,9 +960,9 @@ public class ClassUtil {
     protected static class TypeInfo {
         private Class type;
         private Class componentType;
-        private int   dimension;
-        private List  superclasses = new ArrayList(2);
-        private List  interfaces   = new ArrayList(2);
+        private int dimension;
+        private List superclasses = new ArrayList(2);
+        private List interfaces = new ArrayList(2);
 
         /**
          * 创建 <code>TypeInfo</code>。
@@ -1045,13 +1032,13 @@ public class ClassUtil {
                     set.addAll(getTypeInfo(typeInterface).interfaces);
                 }
 
-                for (Iterator i = superclasses.iterator(); i.hasNext();) {
+                for (Iterator i = superclasses.iterator(); i.hasNext(); ) {
                     Class typeInterface = (Class) i.next();
 
                     set.addAll(getTypeInfo(typeInterface).interfaces);
                 }
 
-                for (Iterator i = set.iterator(); i.hasNext();) {
+                for (Iterator i = set.iterator(); i.hasNext(); ) {
                     Class interfaceClass = (Class) i.next();
 
                     if (!interfaces.contains(interfaceClass)) {
@@ -1059,7 +1046,7 @@ public class ClassUtil {
                     }
                 }
             } else {
-                for (Iterator i = getTypeInfo(componentType).interfaces.iterator(); i.hasNext();) {
+                for (Iterator i = getTypeInfo(componentType).interfaces.iterator(); i.hasNext(); ) {
                     Class componentInterface = (Class) i.next();
 
                     interfaces.add(getArrayClass(componentInterface, dimension));
@@ -1071,7 +1058,6 @@ public class ClassUtil {
          * 将所有的原子类型转换成对应的包装类，其它类型不变。
          *
          * @param type 要转换的类型
-         *
          * @return 非原子类型
          */
         private Class getNonPrimitiveType(Class type) {
@@ -1152,7 +1138,6 @@ public class ClassUtil {
      * 返回指定类型所对应的primitive类型。
      *
      * @param clazz 要检查的类型
-     *
      * @return 如果指定类型为<code>null</code>或不是primitive类型的包装类，则返回<code>null</code>，否则返回相应的primitive类型。
      */
     public static Class getPrimitiveType(Class clazz) {
@@ -1203,7 +1188,6 @@ public class ClassUtil {
      * 返回指定类型所对应的非primitive类型。
      *
      * @param clazz 要检查的类型
-     *
      * @return 如果指定类型为<code>null</code>，则返回<code>null</code>，如果是primitive类型，则返回相应的包装类，否则返回原始的类型。
      */
     public static Class getNonPrimitiveType(Class clazz) {

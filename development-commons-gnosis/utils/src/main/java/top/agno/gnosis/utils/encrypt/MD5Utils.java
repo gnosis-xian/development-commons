@@ -54,10 +54,12 @@ public final class MD5Utils {
         }
     }
 
-    private MD5Utils() {}
+    private MD5Utils() {
+    }
 
     /**
      * getMD5Str
+     *
      * @param str the str
      * @return String
      */
@@ -92,6 +94,7 @@ public final class MD5Utils {
 
     /**
      * md5
+     *
      * @param file the file
      * @return String
      */
@@ -130,6 +133,7 @@ public final class MD5Utils {
 
     /**
      * getMD5String
+     *
      * @param s the s
      * @return String
      */
@@ -142,6 +146,7 @@ public final class MD5Utils {
 
     /**
      * getMD5String
+     *
      * @param bytes the bytes
      * @return String
      */
@@ -189,7 +194,8 @@ public final class MD5Utils {
 
     /**
      * 校验密码
-     * @param password the password
+     *
+     * @param password  the password
      * @param md5PwdStr the md5PwdStr
      * @return boolean
      */
@@ -200,7 +206,8 @@ public final class MD5Utils {
 
     /**
      * 转换byte为Hex字符串
-     * @param value 要转换的byte数据
+     *
+     * @param value     要转换的byte数据
      * @param minlength 生成hex的最小长度（长度不足时会在前面加0
      * @return string
      */
@@ -215,8 +222,9 @@ public final class MD5Utils {
         return s;
     }
 
-    /** 
-     * MD5加密字符串 
+    /**
+     * MD5加密字符串
+     *
      * @param vaule the value
      * @return byte数组
      */
@@ -234,6 +242,7 @@ public final class MD5Utils {
 
     /**
      * MD5+BASE64Encoder加密字符串
+     *
      * @param src the src
      * @return string
      * @throws NoSuchAlgorithmException e
@@ -247,6 +256,7 @@ public final class MD5Utils {
 
     /**
      * test
+     *
      * @param args the args
      * @throws IOException
      * @throws NoSuchAlgorithmException
@@ -255,7 +265,8 @@ public final class MD5Utils {
     public static void main(final String[] args) throws IOException, NoSuchAlgorithmException {
         System.out.println(getMD5String("stationcloudmsg"));
         String str = "test";
-        System.out.println(MD5WithBASE64Encoder(str));;
+        System.out.println(MD5WithBASE64Encoder(str));
+        ;
     }
 
 }

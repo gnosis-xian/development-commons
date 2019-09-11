@@ -35,6 +35,7 @@ import java.util.Arrays;
  * 名称: BeanUtil
  * 描述: 加密工具
  * </pre>
+ *
  * @author yto.net.cn
  * @since 1.0.0
  */
@@ -50,13 +51,14 @@ public final class CryptoUtil {
     private static final int DEFAULT_IVSIZE = 16;
     private static final int H_0XFF = 0xff;
 
-    private CryptoUtil() {}
+    private CryptoUtil() {
+    }
 
     /**
      * 使用HMAC-SHA1进行消息签名, 返回字节数组,长度为20字节.
      *
      * @param input 原始输入字符数组
-     * @param key HMAC-SHA1密钥
+     * @param key   HMAC-SHA1密钥
      * @return 字符数组
      */
     public static byte[] hmacSha1(final byte[] input, final byte[] key) {
@@ -75,8 +77,8 @@ public final class CryptoUtil {
      * 校验HMAC-SHA1签名是否正确.
      *
      * @param expected 已存在的签名
-     * @param input 原始输入字符串
-     * @param key 密钥
+     * @param input    原始输入字符串
+     * @param key      密钥
      * @return 正确返回true，否则返回false
      */
     public static boolean isMacValid(final byte[] expected, final byte[] input, final byte[] key) {
@@ -87,6 +89,7 @@ public final class CryptoUtil {
     /**
      * 生成HMAC-SHA1密钥,返回字节数组,长度为160位(20字节). HMAC-SHA1算法对密钥无特殊要求,
      * RFC2401建议最少长度为160位(20字节).
+     *
      * @return 返回字节数组
      */
     public static byte[] generateHmacSha1Key() {
@@ -105,7 +108,7 @@ public final class CryptoUtil {
      * 使用AES加密原始字符串.
      *
      * @param input 原始输入字符数组
-     * @param key 符合AES要求的密钥
+     * @param key   符合AES要求的密钥
      * @return 字节数组
      */
     public static byte[] aesEncrypt(final byte[] input, final byte[] key) {
@@ -116,8 +119,8 @@ public final class CryptoUtil {
      * 使用AES加密原始字符串.
      *
      * @param input 原始输入字符数组
-     * @param key 符合AES要求的密钥
-     * @param iv 初始向量
+     * @param key   符合AES要求的密钥
+     * @param iv    初始向量
      * @return 字节数组
      */
     public static byte[] aesEncrypt(final byte[] input, final byte[] key, final byte[] iv) {
@@ -128,7 +131,7 @@ public final class CryptoUtil {
      * 使用AES解密字符串, 返回原始字符串.
      *
      * @param input Hex编码的加密字符串
-     * @param key 符合AES要求的密钥
+     * @param key   符合AES要求的密钥
      * @return 明文
      */
     public static String aesDecrypt(final byte[] input, final byte[] key) {
@@ -139,9 +142,9 @@ public final class CryptoUtil {
     /**
      * 使用AES解密字符串, 返回原始字符串.
      *
-     * @param input  Hex编码的加密字符串
-     * @param key 符合AES要求的密钥
-     * @param iv 初始向量
+     * @param input Hex编码的加密字符串
+     * @param key   符合AES要求的密钥
+     * @param iv    初始向量
      * @return 明文
      */
     public static String aesDecrypt(final byte[] input, final byte[] key, final byte[] iv) {
@@ -153,8 +156,8 @@ public final class CryptoUtil {
      * 使用AES加密或解密无编码的原始字节数组, 返回无编码的字节数组结果.
      *
      * @param input 原始字节数组
-     * @param key 符合AES要求的密钥
-     * @param mode Cipher.ENCRYPT_MODE 或 Cipher.DECRYPT_MODE
+     * @param key   符合AES要求的密钥
+     * @param mode  Cipher.ENCRYPT_MODE 或 Cipher.DECRYPT_MODE
      * @return 明文
      */
     private static byte[] aes(final byte[] input, final byte[] key, final int mode) {
@@ -173,9 +176,9 @@ public final class CryptoUtil {
      * 使用AES加密或解密无编码的原始字节数组, 返回无编码的字节数组结果.
      *
      * @param input 原始字节数组
-     * @param key 符合AES要求的密钥
-     * @param iv 初始向量
-     * @param mode Cipher.ENCRYPT_MODE 或 Cipher.DECRYPT_MODE
+     * @param key   符合AES要求的密钥
+     * @param iv    初始向量
+     * @param mode  Cipher.ENCRYPT_MODE 或 Cipher.DECRYPT_MODE
      * @return 明文
      */
     private static byte[] aes(final byte[] input, final byte[] key, final byte[] iv, final int mode) {
@@ -193,6 +196,7 @@ public final class CryptoUtil {
 
     /**
      * 生成AES密钥,返回字节数组, 默认长度为128位(16字节).
+     *
      * @return 字节数组
      */
     public static byte[] generateAesKey() {
@@ -201,6 +205,7 @@ public final class CryptoUtil {
 
     /**
      * 生成AES密钥,可选长度为128,192,256位.
+     *
      * @param keysize 长度
      * @return AES秘钥
      */
@@ -218,6 +223,7 @@ public final class CryptoUtil {
 
     /**
      * 32位小写MD5
+     *
      * @param str 字符串
      * @return 32位小写MD5
      */
@@ -243,6 +249,7 @@ public final class CryptoUtil {
 
     /**
      * 32位大写MD5
+     *
      * @param str 字符串
      * @return 32位大写MD5
      */
@@ -256,6 +263,7 @@ public final class CryptoUtil {
 
     /**
      * 16位大写MD5
+     *
      * @param str 字符串
      * @return 16位大写MD5
      */
@@ -269,6 +277,7 @@ public final class CryptoUtil {
 
     /**
      * 16位小写MD5
+     *
      * @param str 字符串
      * @return 16位小写MD5
      */

@@ -5,14 +5,14 @@ import java.security.NoSuchAlgorithmException;
 
 /**
  * MD5加密
- * 
+ *
  * @author hanxiaoqiang
  * @version $Id: Md5Encryptor.java, v 0.1 2015年11月10日 下午1:04:45 hanxiaoqiang Exp $
  */
 public class Md5Encryptor {
 
-    private static final String[] hexDigits = { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9",
-            "a", "b", "c", "d", "e", "f"   };
+    private static final String[] hexDigits = {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9",
+            "a", "b", "c", "d", "e", "f"};
 
     /*
      * (non-Javadoc)
@@ -34,8 +34,7 @@ public class Md5Encryptor {
     /**
      * Transfer byte array to HEX string
      *
-     * @param b
-     *            byte array
+     * @param b byte array
      * @return HEX string
      */
 

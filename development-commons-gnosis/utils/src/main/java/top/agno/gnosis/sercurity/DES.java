@@ -29,24 +29,35 @@ import java.util.Base64;
  * <pre>
  * Des加密
  * </pre>
+ *
  * @author yto.net.cn
  * @since 1.0.0
  */
 public final class DES {
 
-    /** yeshjcom */
+    /**
+     * yeshjcom
+     */
     private static final String CRYPT_KEY = "yeshjcom";
-    /** 16 */
+    /**
+     * 16
+     */
     private static final int HEX = 16;
-    /** 0xFF */
+    /**
+     * 0xFF
+     */
     private static final int BY_HEX = 0xFF;
-    /** CHARSET */
+    /**
+     * CHARSET
+     */
     private static final Charset CHARSET = Charset.defaultCharset();
 
-    private DES() {}
+    private DES() {
+    }
 
     /**
      * 解密
+     *
      * @param message 密文
      * @return 明文
      */
@@ -66,6 +77,7 @@ public final class DES {
 
     /**
      * des3 cbc解密
+     *
      * @param key   秘钥
      * @param keyiv ivkey
      * @param data  密文
@@ -83,6 +95,7 @@ public final class DES {
 
     /**
      * des3 cbc加密
+     *
      * @param key   秘钥
      * @param keyiv ivkey
      * @param data  明文
@@ -134,6 +147,7 @@ public final class DES {
 
     /**
      * 加密
+     *
      * @param message 明文
      * @return 密文
      */
@@ -153,6 +167,7 @@ public final class DES {
 
     /**
      * 16进制转字节数组
+     *
      * @param ss 16进制
      * @return 字节数组
      */

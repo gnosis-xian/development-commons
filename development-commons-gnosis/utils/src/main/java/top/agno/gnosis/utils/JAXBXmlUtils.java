@@ -33,15 +33,17 @@ import java.util.Map;
 public final class JAXBXmlUtils {
 
     /**
-     *  如果每次都调用JAXBContext.newInstance方法，会导致性能急剧下降,
-     *  所以将JAXBContext的实例化对象用Map缓存起来
+     * 如果每次都调用JAXBContext.newInstance方法，会导致性能急剧下降,
+     * 所以将JAXBContext的实例化对象用Map缓存起来
      */
     private static Map<String, JAXBContext> JAXB_CONTEXT_MAP = new HashMap<String, JAXBContext>();
 
-    private JAXBXmlUtils() {}
+    private JAXBXmlUtils() {
+    }
 
     /**
      * java实体类转xml， 并且格式化生成的xml串
+     *
      * @param obj 对象
      * @return xml字符串
      */
@@ -51,6 +53,7 @@ public final class JAXBXmlUtils {
 
     /**
      * java实体类转xml， 不格式化生成的xml串
+     *
      * @param obj 对象
      * @return xml字符串
      */
@@ -60,10 +63,11 @@ public final class JAXBXmlUtils {
 
     /**
      * java实体类转xml
-     * @param obj       对象
-     * @param encode    编码格式
-     * @param format    是否格式化生成的xml串
-     * @param fragment  是否省略xm头声明信息
+     *
+     * @param obj      对象
+     * @param encode   编码格式
+     * @param format   是否格式化生成的xml串
+     * @param fragment 是否省略xm头声明信息
      * @return xml字符串
      */
     public static String toXML(final Object obj, final String encode, final boolean format, final boolean fragment) {
@@ -89,9 +93,10 @@ public final class JAXBXmlUtils {
 
     /**
      * xml转java实体类
-     * @param xml        xml字符串
-     * @param valueType  类型
-     * @param <T>        泛型
+     *
+     * @param xml       xml字符串
+     * @param valueType 类型
+     * @param <T>       泛型
      * @return T
      */
     @SuppressWarnings("unchecked")

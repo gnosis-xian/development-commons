@@ -80,32 +80,32 @@ public class SSLHttpClientUtil {
         return result;
     }
 
-    public static String doPostSSL(String url, Map<String,Object> map, String charset){
+    public static String doPostSSL(String url, Map<String, Object> map, String charset) {
         HttpClient httpClient = null;
         HttpPost httpPost = null;
         String result = null;
-        try{
+        try {
             httpClient = new SSLClient();
             httpPost = new HttpPost(url);
             //设置参数
             List<NameValuePair> list = new ArrayList<NameValuePair>();
             Iterator iterator = map.entrySet().iterator();
-            while(iterator.hasNext()){
-                Map.Entry<String,Object> elem = (Map.Entry<String, Object>) iterator.next();
-                list.add(new BasicNameValuePair(elem.getKey(),elem.getValue().toString()));
+            while (iterator.hasNext()) {
+                Map.Entry<String, Object> elem = (Map.Entry<String, Object>) iterator.next();
+                list.add(new BasicNameValuePair(elem.getKey(), elem.getValue().toString()));
             }
-            if(list.size() > 0){
-                UrlEncodedFormEntity entity = new UrlEncodedFormEntity(list,charset);
+            if (list.size() > 0) {
+                UrlEncodedFormEntity entity = new UrlEncodedFormEntity(list, charset);
                 httpPost.setEntity(entity);
             }
             HttpResponse response = httpClient.execute(httpPost);
-            if(response != null){
+            if (response != null) {
                 HttpEntity resEntity = response.getEntity();
-                if(resEntity != null){
-                    result = EntityUtils.toString(resEntity,charset);
+                if (resEntity != null) {
+                    result = EntityUtils.toString(resEntity, charset);
                 }
             }
-        }catch(Exception ex){
+        } catch (Exception ex) {
             ex.printStackTrace();
         }
         return result;
@@ -113,6 +113,7 @@ public class SSLHttpClientUtil {
 
     /**
      * 获取客户端真实IP
+     *
      * @param request
      * @return
      */

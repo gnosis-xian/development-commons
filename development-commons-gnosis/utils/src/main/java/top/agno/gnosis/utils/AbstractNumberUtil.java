@@ -23,6 +23,7 @@ import org.apache.commons.lang3.math.NumberUtils;
  * 名称: NumberUtils
  * 描述: number 工具类
  * </pre>
+ *
  * @author yto.net.cn
  * @since 1.0.0
  */
@@ -30,11 +31,11 @@ public abstract class AbstractNumberUtil extends NumberUtils {
 
     /**
      * 在两数范围.
-     *  <pre>（ [number1..number2) | [number1..number2] | (number1..number2) | (number1..number2]）</pre>
+     * <pre>（ [number1..number2) | [number1..number2] | (number1..number2) | (number1..number2]）</pre>
      *
-     * @param number1 数字1
-     * @param isContainsLeft 是否包含number1
-     * @param number2 数字2
+     * @param number1         数字1
+     * @param isContainsLeft  是否包含number1
+     * @param number2         数字2
      * @param isContainsRight 是否包含number2
      * @return 在范围内返回true, 否则返回flase
      */
@@ -60,6 +61,7 @@ public abstract class AbstractNumberUtil extends NumberUtils {
      *   NumberUtils.fromNullable(null).equal(1)  = false
      *   NumberUtils.fromNullable(1).equal(2)  = false
      * </pre>
+     *
      * @param number 比较的数字
      * @return 相等返回true, 否则返回flase
      */
@@ -84,6 +86,7 @@ public abstract class AbstractNumberUtil extends NumberUtils {
      *   NumberUtils.fromNullable(null).less(1)  = true
      *   NumberUtils.fromNullable(1).less(2)  = true
      * </pre>
+     *
      * @param number 比较的数字
      * @return 小于返回true, 否则返回flase
      */
@@ -100,6 +103,7 @@ public abstract class AbstractNumberUtil extends NumberUtils {
      *   NumberUtils.fromNullable(null).lessOrEqualTo(1)  = true
      *   NumberUtils.fromNullable(1).lessOrEqualTo(2)  = true
      * </pre>
+     *
      * @param number 比较的数字
      * @return 小于等于返回true, 否则返回flase
      */
@@ -116,6 +120,7 @@ public abstract class AbstractNumberUtil extends NumberUtils {
      *   NumberUtils.fromNullable(null).greaterThan(1)  = false
      *   NumberUtils.fromNullable(1).greaterThan(2) = false
      * </pre>
+     *
      * @param number 比较的数字
      * @return 大于返回true, 否则返回flase
      */
@@ -132,6 +137,7 @@ public abstract class AbstractNumberUtil extends NumberUtils {
      *  NumberUtils.fromNullable(null).greaterThanOrEqualTo(1) = flase
      *  NumberUtils.fromNullable(1).greaterThanOrEqualTo(2) = flase
      * </pre>
+     *
      * @param number 比较的数字
      * @return 大于等于返回true, 否则返回flase
      */
@@ -148,6 +154,7 @@ public abstract class AbstractNumberUtil extends NumberUtils {
      *  NumberUtils.fromNullable(null).subtract(1) = -1
      *  NumberUtils.fromNullable(1).subtract(2) = -1
      * </pre>
+     *
      * @param number 比较的数字
      * @return 相减后的结果
      */
@@ -155,6 +162,7 @@ public abstract class AbstractNumberUtil extends NumberUtils {
 
     /**
      * 空值转换成数字
+     *
      * @param number 数字
      * @return 转换结果
      */

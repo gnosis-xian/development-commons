@@ -23,16 +23,23 @@ import java.security.SecureRandom;
  * 名称: RandomUtils
  * 描述: 随机数工具类
  * </pre>
+ *
  * @author yto.net.cn
  * @since 1.0.0
  */
 public final class RandomUtils {
 
-    /** ASCIL码随机数起始位 */
+    /**
+     * ASCIL码随机数起始位
+     */
     public static final int ASCII_MIN = 32;
-    /** ASCIL码随机数最后位 */
+    /**
+     * ASCIL码随机数最后位
+     */
     public static final int ASCII_MAX = 127;
-    /** 整数最大数 */
+    /**
+     * 整数最大数
+     */
     public static final int INTEGER_RANGE = 128;
 
     private static final int NUM_55296 = 55296;
@@ -63,13 +70,14 @@ public final class RandomUtils {
 
     // Random
     //-----------------------------------------------------------------------
+
     /**
      * <p>Creates a random string whose length is the number of characters
      * specified.</p>
      *
      * <p>Characters will be chosen from the set of all characters.</p>
      *
-     * @param count  the length of random string to create
+     * @param count the length of random string to create
      * @return the random string
      */
     public static String random(final int count) {
@@ -83,7 +91,7 @@ public final class RandomUtils {
      * <p>Characters will be chosen from the set of characters whose
      * ASCII value is between {@code 32} and {@code 126} (inclusive).</p>
      *
-     * @param count  the length of random string to create
+     * @param count the length of random string to create
      * @return the random string
      */
     public static String randomAscii(final int count) {
@@ -97,7 +105,7 @@ public final class RandomUtils {
      * <p>Characters will be chosen from the set of alphabetic
      * characters.</p>
      *
-     * @param count  the length of random string to create
+     * @param count the length of random string to create
      * @return the random string
      */
     public static String randomAlphabetic(final int count) {
@@ -111,7 +119,7 @@ public final class RandomUtils {
      * <p>Characters will be chosen from the set of alpha-numeric
      * characters.</p>
      *
-     * @param count  the length of random string to create
+     * @param count the length of random string to create
      * @return the random string
      */
     public static String randomAlphanumeric(final int count) {
@@ -125,7 +133,7 @@ public final class RandomUtils {
      * <p>Characters will be chosen from the set of numeric
      * characters.</p>
      *
-     * @param count  the length of random string to create
+     * @param count the length of random string to create
      * @return the random string
      */
     public static String randomNumeric(final int count) {
@@ -139,11 +147,11 @@ public final class RandomUtils {
      * <p>Characters will be chosen from the set of alpha-numeric
      * characters as indicated by the arguments.</p>
      *
-     * @param count  the length of random string to create
-     * @param letters  if {@code true}, generated string may include
-     *  alphabetic characters
-     * @param numbers  if {@code true}, generated string may include
-     *  numeric characters
+     * @param count   the length of random string to create
+     * @param letters if {@code true}, generated string may include
+     *                alphabetic characters
+     * @param numbers if {@code true}, generated string may include
+     *                numeric characters
      * @return the random string
      */
     public static String random(final int count, final boolean letters, final boolean numbers) {
@@ -157,13 +165,13 @@ public final class RandomUtils {
      * <p>Characters will be chosen from the set of alpha-numeric
      * characters as indicated by the arguments.</p>
      *
-     * @param count  the length of random string to create
-     * @param start  the position in set of chars to start at
-     * @param end  the position in set of chars to end before
-     * @param letters  if {@code true}, generated string may include
-     *  alphabetic characters
-     * @param numbers  if {@code true}, generated string may include
-     *  numeric characters
+     * @param count   the length of random string to create
+     * @param start   the position in set of chars to start at
+     * @param end     the position in set of chars to end before
+     * @param letters if {@code true}, generated string may include
+     *                alphabetic characters
+     * @param numbers if {@code true}, generated string may include
+     *                numeric characters
      * @return the random string
      */
     public static String random(final int count, final int start, final int end, final boolean letters, final boolean numbers) {
@@ -175,20 +183,20 @@ public final class RandomUtils {
      * default source of randomness.</p>
      *
      * <p>This method has exactly the same semantics as
-     * {@link #random(int,int,int,boolean,boolean,char[],Random)}, but
+     * {@link #random(int, int, int, boolean, boolean, char[], Random)}, but
      * instead of using an externally supplied source of randomness, it uses
      * the internal static {@link Random} instance.</p>
      *
-     * @param count  the length of random string to create
-     * @param start  the position in set of chars to start at
-     * @param end  the position in set of chars to end before
-     * @param letters  only allow letters?
-     * @param numbers  only allow numbers?
-     * @param chars  the set of chars to choose randoms from.
-     *  If {@code null}, then it will use the set of all chars.
+     * @param count   the length of random string to create
+     * @param start   the position in set of chars to start at
+     * @param end     the position in set of chars to end before
+     * @param letters only allow letters?
+     * @param numbers only allow numbers?
+     * @param chars   the set of chars to choose randoms from.
+     *                If {@code null}, then it will use the set of all chars.
      * @return the random string
      * @throws ArrayIndexOutOfBoundsException if there are not
-     *  {@code (end - start) + 1} characters in the set array.
+     *                                        {@code (end - start) + 1} characters in the set array.
      */
     public static String random(final int count, final int start, final int end, final boolean letters, final boolean numbers, final char... chars) {
         return random(count, start, end, letters, numbers, chars, RANDOM);
@@ -213,22 +221,22 @@ public final class RandomUtils {
      * the same random sequence of strings can be generated repeatedly
      * and predictably.</p>
      *
-     * @param count  the length of random string to create
-     * @param start  the position in set of chars to start at
-     * @param end  the position in set of chars to end before
-     * @param letters  only allow letters?
-     * @param numbers  only allow numbers?
-     * @param chars  the set of chars to choose randoms from, must not be empty.
-     *  If {@code null}, then it will use the set of all chars.
+     * @param count   the length of random string to create
+     * @param start   the position in set of chars to start at
+     * @param end     the position in set of chars to end before
+     * @param letters only allow letters?
+     * @param numbers only allow numbers?
+     * @param chars   the set of chars to choose randoms from, must not be empty.
+     *                If {@code null}, then it will use the set of all chars.
      * @param random  a source of randomness.
      * @return the random string
      * @throws ArrayIndexOutOfBoundsException if there are not
-     *  {@code (end - start) + 1} characters in the set array.
-     * @throws IllegalArgumentException if {@code count} &lt; 0 or the provided chars array is empty.
+     *                                        {@code (end - start) + 1} characters in the set array.
+     * @throws IllegalArgumentException       if {@code count} &lt; 0 or the provided chars array is empty.
      * @since 2.0
      */
     public static String random(final int count, final int start, final int end, final boolean letters,
-            final boolean numbers, final char[] chars, final SecureRandom random) {
+                                final boolean numbers, final char[] chars, final SecureRandom random) {
         if (count == 0) {
             return "";
         } else if (count < 0) {
@@ -262,7 +270,7 @@ public final class RandomUtils {
     }
 
     private static char[] getBuffer(final int count, final int start, final int gap, final boolean letters,
-            final boolean numbers, final char[] chars, final SecureRandom random) {
+                                    final boolean numbers, final char[] chars, final SecureRandom random) {
         int countT = count;
         final char[] buffer = new char[countT];
         while (countT-- != 0) {
@@ -312,9 +320,9 @@ public final class RandomUtils {
      * specified by the string, must not be empty.
      * If null, the set of all characters is used.</p>
      *
-     * @param count  the length of random string to create
-     * @param chars  the String containing the set of characters to use,
-     *  may be null, but must not be empty
+     * @param count the length of random string to create
+     * @param chars the String containing the set of characters to use,
+     *              may be null, but must not be empty
      * @return the random string
      * @throws IllegalArgumentException if {@code count} &lt; 0 or the string is empty.
      */
@@ -331,9 +339,9 @@ public final class RandomUtils {
      *
      * <p>Characters will be chosen from the set of characters specified.</p>
      *
-     * @param count  the length of random string to create
-     * @param chars  the character array containing the set of characters to use,
-     *  may be null
+     * @param count the length of random string to create
+     * @param chars the character array containing the set of characters to use,
+     *              may be null
      * @return the random string
      * @throws IllegalArgumentException if {@code count} &lt; 0.
      */

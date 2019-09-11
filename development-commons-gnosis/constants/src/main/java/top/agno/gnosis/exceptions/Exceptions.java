@@ -4,10 +4,10 @@ import java.io.PrintWriter;
 import java.io.StringWriter;
 
 /**
- *  关于异常的工具类.
- * 
+ * 关于异常的工具类.
+ * <p>
  * 参考了guava的Throwables。
- * 
+ *
  * @author hanxiaoqiang
  * @version $Id: Exceptions.java, v 0.1 2015年11月12日 下午1:20:57 hanxiaoqiang Exp $
  */
@@ -39,8 +39,8 @@ public class Exceptions {
     public static String getErrorMessageWithNestedException(Throwable ex) {
         Throwable nestedException = ex.getCause();
         return new StringBuilder().append(ex.getMessage()).append(" nested exception is ")
-            .append(nestedException.getClass().getName()).append(":")
-            .append(nestedException.getMessage()).toString();
+                .append(nestedException.getClass().getName()).append(":")
+                .append(nestedException.getMessage()).toString();
     }
 
     /**

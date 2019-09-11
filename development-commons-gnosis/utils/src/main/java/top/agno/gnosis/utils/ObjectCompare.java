@@ -29,7 +29,8 @@ import java.util.regex.Pattern;
  */
 public final class ObjectCompare {
 
-    private ObjectCompare() {}
+    private ObjectCompare() {
+    }
 
     /**
      * 判断目标值是否存在与源列表中
@@ -56,6 +57,7 @@ public final class ObjectCompare {
 
     /**
      * 判断目标值是否存在与源列表中
+     *
      * @param target 源
      * @param source 目标
      * @return 返回是否存在结果 true=存在，false=不存在
@@ -82,6 +84,7 @@ public final class ObjectCompare {
 
     /**
      * 正则表达式比较target是否在regExs内
+     *
      * @param target 源
      * @param regExs 正则列表
      * @return 返回是否存在结果 true=存在，false=不存在
@@ -108,6 +111,7 @@ public final class ObjectCompare {
 
     /**
      * 正则表达式比较target是否在regExs内
+     *
      * @param target 源
      * @param regExs 正则列表
      * @return 返回是否存在结果 true=存在，false=不存在
@@ -122,6 +126,7 @@ public final class ObjectCompare {
 
     /**
      * 比较source是否在target结尾
+     *
      * @param target 目标
      * @param source 源
      * @return 返回是否存在结果 true=存在，false=不存在

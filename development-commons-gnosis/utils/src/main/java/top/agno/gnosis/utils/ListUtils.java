@@ -26,13 +26,16 @@ import java.util.List;
  * 名称: ListUtils
  * 描述: List工具类
  * </pre>
+ *
  * @author yto.net.cn
  * @since 1.0.0
  */
-@SuppressWarnings({ "unchecked", "rawtypes" })
+@SuppressWarnings({"unchecked", "rawtypes"})
 public final class ListUtils {
 
-    private ListUtils() {}
+    private ListUtils() {
+    }
+
     /**
      * 求ls对ls2的差集,即ls中有，但ls2中没有的
      *

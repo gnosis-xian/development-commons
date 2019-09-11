@@ -28,6 +28,7 @@ import java.util.zip.*;
  * 名称: ZipUtils
  * 描述: 字符串压缩、解压操作工具类
  * </pre>
+ *
  * @author yto.net.cn
  * @since 1.0.0
  */
@@ -35,10 +36,12 @@ public final class ZipUtils {
 
     private static final int BYTE_LENGTH = 1024;
 
-    private ZipUtils() {}
+    private ZipUtils() {
+    }
 
     /**
      * 使用gzip进行压缩
+     *
      * @param primStr 压缩串
      * @return 压缩后字符串
      */
@@ -53,16 +56,17 @@ public final class ZipUtils {
         return Base64.getEncoder().encodeToString(out.toByteArray());
     }
 
-   /**
-    * 使用gzip进行解压缩
-    * @param compressedStr 需要解压的文本
-    * @return 解压后的文本
-    */
+    /**
+     * 使用gzip进行解压缩
+     *
+     * @param compressedStr 需要解压的文本
+     * @return 解压后的文本
+     */
     public static String gunzip(final String compressedStr) {
         byte[] compressed = Base64.getDecoder().decode(compressedStr);
         ByteArrayOutputStream out = new ByteArrayOutputStream();
         try (ByteArrayInputStream in = new ByteArrayInputStream(compressed);
-                GZIPInputStream ginzip = new GZIPInputStream(in)) {
+             GZIPInputStream ginzip = new GZIPInputStream(in)) {
 
             byte[] buffer = new byte[BYTE_LENGTH];
             int offset = -1;
@@ -77,6 +81,7 @@ public final class ZipUtils {
 
     /**
      * 使用zip进行压缩
+     *
      * @param str 压缩前的文本
      * @return 返回压缩后的文本
      */
@@ -94,6 +99,7 @@ public final class ZipUtils {
 
     /**
      * 使用zip进行解压缩
+     *
      * @param compressedStr 压缩后的文本
      * @return 解压后的字符串
      */
@@ -101,7 +107,7 @@ public final class ZipUtils {
         ByteArrayOutputStream out = new ByteArrayOutputStream();
         byte[] compressed = Base64.getDecoder().decode(compressedStr);
         try (ByteArrayInputStream in = new ByteArrayInputStream(compressed);
-                ZipInputStream zin = new ZipInputStream(in)) {
+             ZipInputStream zin = new ZipInputStream(in)) {
             zin.getNextEntry();
             byte[] buffer = new byte[BYTE_LENGTH];
             int offset = -1;

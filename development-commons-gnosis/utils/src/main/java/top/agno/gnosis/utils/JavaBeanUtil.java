@@ -30,18 +30,20 @@ import java.util.Map;
  * 名称: JavaBeanUtil
  * 描述: JavaBean处理
  * </pre>
+ *
  * @author yto.net.cn
  * @since 1.0.0
  */
 public final class JavaBeanUtil {
 
-    private JavaBeanUtil() {}
+    private JavaBeanUtil() {
+    }
 
     /**
      * 高性能map to bean
      *
-     * @param bean 转换的bean对象
-     * @param map  转换的map
+     * @param bean             转换的bean对象
+     * @param map              转换的map
      * @param allowEmptyString string类型中是否允许""赋值
      */
     public static void map2bean(final Object bean, final Map<String, Object> map, final boolean allowEmptyString) {
@@ -51,14 +53,14 @@ public final class JavaBeanUtil {
     /**
      * 高性能map to bean
      *
-     * @param bean 转换的bean对象
-     * @param map  转换的map
+     * @param bean             转换的bean对象
+     * @param map              转换的map
      * @param allowEmptyString string类型中是否允许""赋值
-     * @param dataFormat 如果map中有日期转换为bean中String,需要转为相应格式 如：yyyy-MM-dd HH:mm:ss
+     * @param dataFormat       如果map中有日期转换为bean中String,需要转为相应格式 如：yyyy-MM-dd HH:mm:ss
      */
-    @SuppressWarnings({ "rawtypes" })
+    @SuppressWarnings({"rawtypes"})
     public static void map2bean(final Object bean, final Map<String, Object> map, final boolean allowEmptyString,
-            final String dataFormat) {
+                                final String dataFormat) {
         Class beanClass = bean.getClass();
 
         Method[] methods = beanClass.getMethods();
@@ -77,9 +79,9 @@ public final class JavaBeanUtil {
                         if (o.toString().trim().length() == 0 && allowEmptyString) {
                             continue;
                         }
-                        method.invoke(bean, new Object[] {o});
+                        method.invoke(bean, new Object[]{o});
                     } else {
-                        method.invoke(bean, new Object[] {o});
+                        method.invoke(bean, new Object[]{o});
                     }
                 }
             } catch (final Exception ex) {
@@ -90,10 +92,11 @@ public final class JavaBeanUtil {
 
     /**
      * 高性能map to bean
-     * @param clazz 转换的bean对象
-     * @param map 转换的map
+     *
+     * @param clazz            转换的bean对象
+     * @param map              转换的map
      * @param allowEmptyString 是否允许为空字符串
-     * @param <T> 返回类型
+     * @param <T>              返回类型
      * @return bean
      */
     public static <T> T map2bean(final Class<T> clazz, final Map<String, Object> map, final boolean allowEmptyString) {
@@ -103,15 +106,15 @@ public final class JavaBeanUtil {
     /**
      * 高性能map to bean
      *
-     * @param <T> 返回类型
-     * @param clazz 转换的bean对象
-     * @param map 转换的map对象
+     * @param <T>              返回类型
+     * @param clazz            转换的bean对象
+     * @param map              转换的map对象
      * @param allowEmptyString string类型中是否允许""赋值
-     * @param dataFormat 如果map中有日期转换为bean中String,需要转为相应格式 如：yyyy-MM-dd HH:mm:ss
+     * @param dataFormat       如果map中有日期转换为bean中String,需要转为相应格式 如：yyyy-MM-dd HH:mm:ss
      * @return bean
      */
     public static <T> T map2bean(final Class<T> clazz, final Map<String, Object> map, final boolean allowEmptyString,
-            final String dataFormat) {
+                                 final String dataFormat) {
         try {
             T object = clazz.newInstance();
             Method[] methods = clazz.getMethods();
@@ -130,9 +133,9 @@ public final class JavaBeanUtil {
                             if (o.toString().trim().length() == 0 && allowEmptyString) {
                                 continue;
                             }
-                            method.invoke(object, new Object[] {o});
+                            method.invoke(object, new Object[]{o});
                         } else {
-                            method.invoke(object, new Object[] {o});
+                            method.invoke(object, new Object[]{o});
                         }
                     }
                 } catch (final Exception ex) {
@@ -147,7 +150,8 @@ public final class JavaBeanUtil {
 
     /**
      * bean to map
-     * @param bean 转换的bean对象
+     *
+     * @param bean     转换的bean对象
      * @param mapParam 转换的map对象
      * @return map 如果bean为null 返回null
      */
@@ -180,6 +184,7 @@ public final class JavaBeanUtil {
 
     /**
      * bean to map
+     *
      * @param bean 转换的bean对象
      * @return map 如果bean为null 返回null
      */
@@ -209,7 +214,8 @@ public final class JavaBeanUtil {
 
     /**
      * bean to map
-     * @param bean 转换的bean对象
+     *
+     * @param bean        转换的bean对象
      * @param isIncludMap 是否读取Map数据
      * @return map 如果bean为null 返回null
      */
@@ -239,7 +245,8 @@ public final class JavaBeanUtil {
 
     /**
      * bean to map
-     * @param bean 转换的bean对象
+     *
+     * @param bean        转换的bean对象
      * @param isIncludMap 是否读取Map数据
      * @return map 如果bean为null 返回null
      */
@@ -270,6 +277,7 @@ public final class JavaBeanUtil {
     /**
      * map转字符串
      * map {key:value,key1:value1...} to key=value&key1=value1
+     *
      * @param map map
      * @return 字符串
      */

@@ -26,6 +26,7 @@ import java.util.Base64;
  * 名称: Base64Util
  * 描述: Base64Util
  * </pre>
+ *
  * @author yto.net.cn
  * @since 1.0.0
  */
@@ -50,7 +51,8 @@ public final class Base64Util {
     private static final byte[] BASE64_ALPHABET = new byte[''];
     private static final char[] LOOK_UP_BASE64_ALPHABET = new char[LOOKUPLENGTH];
 
-    private Base64Util(){}
+    private Base64Util() {
+    }
 
     private static boolean isWhiteSpace(final char octect) {
         return (octect == ' ') || (octect == '\r') || (octect == '\n') || (octect == '\t');
@@ -66,6 +68,7 @@ public final class Base64Util {
 
     /**
      * 加密
+     *
      * @param binaryData 明文字节数组
      * @return 密文
      */
@@ -142,6 +145,7 @@ public final class Base64Util {
 
     /**
      * 解密
+     *
      * @param encoded 密文
      * @return 明文字节数组
      */
@@ -293,6 +297,7 @@ public final class Base64Util {
 
     /**
      * 基本Base64编码
+     *
      * @param bytes
      * @return byte[]
      */

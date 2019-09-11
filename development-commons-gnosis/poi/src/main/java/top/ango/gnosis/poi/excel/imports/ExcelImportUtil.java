@@ -18,6 +18,7 @@ import java.util.*;
 
 /**
  * Excel工具类
+ *
  * @author : zhangbolong
  * @since : 2019-8-21
  */
@@ -25,6 +26,7 @@ public class ExcelImportUtil {
 
     /**
      * 读取文件流
+     *
      * @param param
      * @param <T>
      * @return
@@ -43,7 +45,7 @@ public class ExcelImportUtil {
 
         List<Object> list = new ArrayList<Object>();
         demo = Class.forName(param.getClassPath());
-        String fileType = param.getFilePath().substring(param.getFilePath().lastIndexOf(".") + 1,param.getFilePath().length());
+        String fileType = param.getFilePath().substring(param.getFilePath().lastIndexOf(".") + 1, param.getFilePath().length());
 
         Workbook wb = null;
 
@@ -139,7 +141,7 @@ public class ExcelImportUtil {
                         }
                         String attr = param.getMap().get(key).toString();// 得到属性
 
-                        Class<?> attrType = BeanUtils.findPropertyType(attr, new Class[] { obj.getClass() });
+                        Class<?> attrType = BeanUtils.findPropertyType(attr, new Class[]{obj.getClass()});
 
                         Cell cell = hssfRow.getCell(cellNum_x);
                         getValue(cell, obj, attr, attrType, rowNum, cellNum_x, key);
@@ -158,6 +160,7 @@ public class ExcelImportUtil {
 
     /**
      * 读取网络流
+     *
      * @param param
      * @param <T>
      * @return
@@ -275,7 +278,7 @@ public class ExcelImportUtil {
                         }
                         String attr = param.getMap().get(key).toString();// 得到属性
 
-                        Class<?> attrType = BeanUtils.findPropertyType(attr, new Class[] { obj.getClass() });
+                        Class<?> attrType = BeanUtils.findPropertyType(attr, new Class[]{obj.getClass()});
 
                         Cell cell = hssfRow.getCell(cellNum_x);
                         getValue(cell, obj, attr, attrType, rowNum, cellNum_x, key);
@@ -294,6 +297,7 @@ public class ExcelImportUtil {
 
     /**
      * 读取流文件
+     *
      * @param param
      * @param <T>
      * @return
@@ -314,7 +318,7 @@ public class ExcelImportUtil {
                 param.getFilePath().length());
         //InputStream is = new FileInputStream(param.getFilePath());
 
-        URL url=new URL(param.getFilePath());
+        URL url = new URL(param.getFilePath());
         URLConnection urlConnection = url.openConnection();
         InputStream is = urlConnection.getInputStream();
 
@@ -413,7 +417,7 @@ public class ExcelImportUtil {
                         }
                         String attr = param.getMap().get(key).toString();// 得到属性
 
-                        Class<?> attrType = BeanUtils.findPropertyType(attr, new Class[] { obj.getClass() });
+                        Class<?> attrType = BeanUtils.findPropertyType(attr, new Class[]{obj.getClass()});
 
                         Cell cell = hssfRow.getCell(cellNum_x);
                         getValue(cell, obj, attr, attrType, rowNum, cellNum_x, key);
@@ -432,6 +436,7 @@ public class ExcelImportUtil {
 
     /**
      * 得到Excel列的值
+     *
      * @param cell
      * @param obj
      * @param attr
@@ -481,9 +486,9 @@ public class ExcelImportUtil {
             }
 
         } else if (cell.getCellTypeEnum() == CellType.STRING) {
-            if(attrType.equals(double.class) || attrType.equals(Double.class)){
+            if (attrType.equals(double.class) || attrType.equals(Double.class)) {
                 val = Double.parseDouble(cell.getStringCellValue());
-            }else{
+            } else {
                 val = cell.getStringCellValue();
             }
 
@@ -495,8 +500,9 @@ public class ExcelImportUtil {
 
     /**
      * 反射的set方法给属性赋值
-     * @param obj  具体的类
-     * @param att  类的属性
+     *
+     * @param obj   具体的类
+     * @param att   类的属性
      * @param value 赋予属性的值
      * @param type  属性是哪种类型 比如:String double boolean等类型
      * @param row
@@ -517,9 +523,9 @@ public class ExcelImportUtil {
 
     /**
      * 将传进来的表头和表头对应的属性存进Map集合，表头字段为key,属性为value
-     * @param keyValue
-     * 把传进指定格式的字符串解析到Map中
-     * 形如: String keyValue = "手机名称:phoneName,颜色:color,售价:price";
+     *
+     * @param keyValue 把传进指定格式的字符串解析到Map中
+     *                 形如: String keyValue = "手机名称:phoneName,颜色:color,售价:price";
      * @return
      */
     public static Map<String, String> getMap(String keyValue) {
@@ -552,6 +558,7 @@ public class ExcelImportUtil {
 
     /**
      * String类型日期转为Date类型
+     *
      * @param dateStr
      * @return
      * @throws ParseException

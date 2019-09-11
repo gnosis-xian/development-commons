@@ -29,18 +29,21 @@ import java.util.Map;
  * 名称: BeanUtil
  * 描述: 基于cglib进行Bean Copy
  * </pre>
+ *
  * @author yto.net.cn
  * @since 1.0.0
  */
 public final class BeanUtil {
 
-    private BeanUtil() {}
+    private BeanUtil() {
+    }
+
     /**
      * 基于cglib进行对象复制
      *
      * @param source 被复制的对象
-     * @param clazz 复制对象类型
-     * @param <T>   返回类型
+     * @param clazz  复制对象类型
+     * @param <T>    返回类型
      * @return t
      */
     public static <T> T copy(final Object source, final Class<T> clazz) {
@@ -71,9 +74,9 @@ public final class BeanUtil {
     /**
      * 将map装换为javabean对象
      *
-     * @param map map
+     * @param map  map
      * @param bean javabean
-     * @param <T>   返回类型
+     * @param <T>  返回类型
      * @return bean
      */
     public static <T> T mapToBean(final Map<String, Object> map, final T bean) {
@@ -85,8 +88,8 @@ public final class BeanUtil {
     /**
      * 将对象装换为map
      *
-     * @param bean  对象
-     * @param <T>   返回类型
+     * @param bean 对象
+     * @param <T>  返回类型
      * @return map
      */
     public static <T> Map<String, Object> beanToMap(final T bean) {
@@ -103,9 +106,9 @@ public final class BeanUtil {
     /**
      * 将对象装换为map
      *
-     * @param bean 对象
+     * @param bean      对象
      * @param ignoreMap 是否忽略Map
-     * @param <T>   返回类型
+     * @param <T>       返回类型
      * @return map
      */
     public static <T> Map<String, Object> beanToMap(final T bean, final Boolean ignoreMap) {
@@ -149,7 +152,7 @@ public final class BeanUtil {
      * 通过class实例化对象
      *
      * @param clazz 类型
-     * @param <T> 数据类型
+     * @param <T>   数据类型
      * @return class实例
      * @throws RuntimeException 运行时异常
      */

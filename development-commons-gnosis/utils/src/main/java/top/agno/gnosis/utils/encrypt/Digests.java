@@ -12,16 +12,16 @@ import java.security.SecureRandom;
 
 /**
  * 支持SHA-1/MD5消息摘要的工具类.
- * 
+ * <p>
  * 返回ByteSource，可进一步被编码为Hex, Base64或UrlSafeBase64
- * 
+ *
  * @author hanxiaoqiang
  * @version $Id: Digests.java, v 0.1 2015年11月12日 下午1:20:29 hanxiaoqiang Exp $
  */
 public class Digests {
 
     private static final String SHA1 = "SHA-1";
-    private static final String MD5  = "MD5";
+    private static final String MD5 = "MD5";
 
     private static SecureRandom random = new SecureRandom();
 
@@ -65,7 +65,7 @@ public class Digests {
 
     /**
      * 生成随机的Byte[]作为salt.
-     * 
+     *
      * @param numBytes byte数组的大小
      */
     public static byte[] generateSalt(int numBytes) {

@@ -22,15 +22,18 @@ import java.util.UUID;
  * <pre>
  * 唯一序列号获取
  * </pre>
+ *
  * @author yto.net.cn
  * @since 1.0.0
  */
 public final class IdUtil {
 
-    private IdUtil() {}
+    private IdUtil() {
+    }
 
     /**
      * 生成唯一id
+     *
      * @return id
      */
     public static String getSeqID() {
