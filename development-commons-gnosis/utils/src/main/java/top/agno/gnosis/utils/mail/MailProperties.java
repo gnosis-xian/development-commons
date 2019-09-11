@@ -31,5 +31,5 @@ public class MailProperties {
 
     private String password = this.environment.getProperty(PASSWORD);
 
-    private boolean smtpStarttlsEnable = StringUtil.isEmpty(this.environment.getProperty(SMTP_START_TLS_ENABLE)) ? false : Boolean.parseBoolean(this.environment.getProperty(SMTP_START_TLS_ENABLE));
+    private Boolean smtpStarttlsEnable = StringUtil.isEmpty(this.environment.getProperty(SMTP_START_TLS_ENABLE)) ? false : Boolean.parseBoolean(this.environment.getProperty(SMTP_START_TLS_ENABLE));
 }
