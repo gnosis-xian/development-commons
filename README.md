@@ -30,3 +30,9 @@ More...
 ## Contributors
 
 - <a href="https://github.com/gnosis-xian/">gnosis-xian</a>
+
+## Versions
+
+#### - 1.0-RELEASE
+
+Init and first version. It will has some problems. You can new issue and notice me to solve.

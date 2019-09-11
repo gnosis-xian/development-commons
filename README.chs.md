@@ -30,3 +30,9 @@ Language Switch | 语言切换
 ## 贡献者
 
 - <a href="https://github.com/gnosis-xian/">gnosis-xian</a>
+
+## 版本
+
+#### - 1.0-RELEASE
+
+初代版本，这会有一些问题，你可以新建issue并且提醒我来解决。
