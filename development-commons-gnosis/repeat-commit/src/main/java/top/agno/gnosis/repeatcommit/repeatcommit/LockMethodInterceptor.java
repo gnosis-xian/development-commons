@@ -15,17 +15,16 @@ import java.lang.reflect.Method;
 @Configuration
 public class LockMethodInterceptor {
 
+    private final StringRedisTemplate lockRedisTemplate;
+    private final CacheKeyGenerator cacheKeyGenerator;
+
     @Autowired
     public LockMethodInterceptor(StringRedisTemplate lockRedisTemplate, CacheKeyGenerator cacheKeyGenerator) {
         this.lockRedisTemplate = lockRedisTemplate;
         this.cacheKeyGenerator = cacheKeyGenerator;
     }
 
-    private final StringRedisTemplate lockRedisTemplate;
-    private final CacheKeyGenerator cacheKeyGenerator;
-
-
-    @Around("execution(public * *(..)) && @annotation(cn.net.yto.fms.commons.utils.repeatcommit.CacheLock)")
+    @Around("execution(public * *(..)) && @annotation(top.agno.gnosis.repeatcommit.repeatcommit.CacheLock)")
     public Object interceptor(ProceedingJoinPoint pjp) throws Throwable {
         MethodSignature signature = (MethodSignature) pjp.getSignature();
         Method method = signature.getMethod();

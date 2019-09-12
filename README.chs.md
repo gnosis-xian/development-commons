@@ -33,6 +33,10 @@ Language Switch | 语言切换
 
 ## 版本
 
+每个RELEASE版本会使用 X.X 来表示，而SNAPSHOT版本会使用 X.X.X 表示。
+
+每个RELEASE版本都会使用<a href="https://www.xa-metro.com/info/1243/28743.htm">西安地铁</a>站的名称来命名。
+
 #### - 1.0-RELEASE
 
 初代版本，这会有一些问题，你可以新建issue并且提醒我来解决。

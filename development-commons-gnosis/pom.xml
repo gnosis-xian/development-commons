@@ -5,7 +5,7 @@
     <parent>
         <artifactId>development-commons</artifactId>
         <groupId>top.agno</groupId>
-        <version>1.0-RELEASE</version>
+        <version>1.0.2-HWZ-RELEASE</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 

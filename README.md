@@ -33,6 +33,10 @@ More...
 
 ## Versions
 
+Every version will use X.X to present RELEASE and X.X.X to SNAPSHOT.
+
+Every release version will named by <a href="https://www.xa-metro.com/info/1243/28743.htm">Xi'an Metro</a> station's name.
+
 #### - 1.0-RELEASE
 
 Init and first version. It will has some problems. You can new issue and notice me to solve.

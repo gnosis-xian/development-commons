@@ -1,9 +1,9 @@
 package top.agno.gnosis.utils.mail;
 
 import lombok.Data;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.core.env.Environment;
 import top.agno.gnosis.utils.StringUtil;
 
 import static top.agno.gnosis.constants.Constants.Mail.*;
@@ -16,20 +16,19 @@ import static top.agno.gnosis.constants.Constants.Mail.*;
  */
 @Data
 @Configuration
+@ConfigurationProperties(value = PREFIX)
 public class MailProperties {
 
-    @Autowired
-    private Environment environment;
+    private String host;
 
-    private String host = this.environment.getProperty(HOST);
+    private String protocol = "smtp";
 
-    private String protocol = StringUtil.isEmpty(this.environment.getProperty(PROTOCOL)) ? "smtp" : this.environment.getProperty(PROTOCOL);
+    private int port = 465;
 
-    private int port = StringUtil.isEmpty(this.environment.getProperty(PORT)) ? 465 : Integer.parseInt(this.environment.getProperty(PORT));
+    private String username;
 
-    private String username = this.environment.getProperty(USERNAME);
+    private String password;
 
-    private String password = this.environment.getProperty(PASSWORD);
+    private Boolean smtpStarttlsEnable = false;
 
-    private Boolean smtpStarttlsEnable = StringUtil.isEmpty(this.environment.getProperty(SMTP_START_TLS_ENABLE)) ? false : Boolean.parseBoolean(this.environment.getProperty(SMTP_START_TLS_ENABLE));
 }
