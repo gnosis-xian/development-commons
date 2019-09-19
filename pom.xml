@@ -7,7 +7,7 @@
     <groupId>top.agno</groupId>
     <artifactId>development-commons</artifactId>
     <packaging>pom</packaging>
-    <version>1.0.2-HWZ-RELEASE</version>
+    <version>1.0.3-HWZ-SNAPSHOT</version>
     <modules>
         <module>development-commons-gnosis</module>
     </modules>

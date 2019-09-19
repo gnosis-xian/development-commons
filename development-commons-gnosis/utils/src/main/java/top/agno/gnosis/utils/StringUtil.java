@@ -44,6 +44,11 @@ public class StringUtil extends StringUtils {
     public static final String EMPTY_STRING = "";
 
     /**
+     * 百分号 % 字符串
+     */
+    public static final String PERCENT_STRING = "%";
+
+    /**
      * 第一个字符小写
      *
      * @param string str
@@ -4457,5 +4462,41 @@ public class StringUtil extends StringUtils {
      */
     public static String getPublicKey() {
         return Constants.RSAKeys.PUBLIC_KEY;
+    }
+
+    /**
+     * % 在左
+     *
+     * @author: gaojing [gaojing1996@vip.qq.com]
+     */
+    public static String leftLiked(String str) {
+        if (isBlank(str)) {
+            return str;
+        }
+        return PERCENT_STRING.concat(str);
+    }
+
+    /**
+     * % 在右
+     *
+     * @author: gaojing [gaojing1996@vip.qq.com]
+     */
+    public static String rightLiked(String str) {
+        if (isBlank(str)) {
+            return str;
+        }
+        return str.concat(PERCENT_STRING);
+    }
+
+    /**
+     * % 在两边
+     *
+     * @author: gaojing [gaojing1996@vip.qq.com]
+     */
+    public static String allLiked(String str) {
+        if (isBlank(str)) {
+            return str;
+        }
+        return PERCENT_STRING.concat(str).concat(PERCENT_STRING);
     }
 }
