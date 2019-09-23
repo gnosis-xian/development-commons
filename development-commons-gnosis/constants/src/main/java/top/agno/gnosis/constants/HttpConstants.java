@@ -22,6 +22,8 @@ public interface HttpConstants {
      *
      */
     String ALL_VALUE = "*/*";
+    String ALL_MAPPING = "/**";
+    String START_CHAR = "*";
     String APPLICATION_ATOM_XML_VALUE = "application/atom+xml";
     String APPLICATION_FORM_URLENCODED_VALUE = "application/x-www-form-urlencoded";
     String APPLICATION_JSON_VALUE = "application/json";
@@ -34,6 +36,7 @@ public interface HttpConstants {
     String IMAGE_PNG_VALUE = "image/png";
     String MULTIPART_FORM_DATA_VALUE = "multipart/form-data";
     String TEXT_HTML_VALUE = "text/html";
+    String TEXT_HTML_VALUE_UTF8_VALUE =  TEXT_HTML_VALUE + ";charset=UTF-8";
     String TEXT_PLAIN_VALUE = "text/plain";
     String TEXT_XML_VALUE = "text/xml";
 

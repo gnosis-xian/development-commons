@@ -10,6 +10,7 @@
     <version>1.0.3-HWZ-SNAPSHOT</version>
     <modules>
         <module>development-commons-gnosis</module>
+        <module>development-commons-oss</module>
     </modules>
 
     <parent>
