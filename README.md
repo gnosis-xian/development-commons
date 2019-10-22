@@ -8,7 +8,9 @@ Language Switch | 语言切换
 
 Commons code in every project.
 
-At the begining of a project. Some same codes will copy to this new. This is very troublesome. Now it can be add dependency in maven to solve the repeat work problems.
+At the beginning of a project. Some same codes will be duplicate with each other. That's very troublesome. 
+
+Now, you can be add dependency in your maven project to solve the repeat work problems.
 
 This project will be open source and everyone can contribute codes.
 
@@ -35,7 +37,7 @@ More...
 
 Every version will use X.X to present RELEASE and X.X.X to SNAPSHOT.
 
-Every release version will named by <a href="https://www.xa-metro.com/info/1243/28743.htm">Xi'an Metro</a> station's name.
+Every release version will named by <a href="https://www.xa-metro.com/info/1243/28743.htm">Xi'an Metro</a> stations.
 
 #### - 1.0-RELEASE
 
