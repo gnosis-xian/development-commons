@@ -16,6 +16,7 @@
 
 package top.agno.gnosis.utils;
 
+import org.apache.commons.lang3.time.DateUtils;
 import org.joda.time.DateTime;
 import org.joda.time.LocalDateTime;
 import org.joda.time.format.DateTimeFormat;
@@ -35,7 +36,7 @@ import java.util.*;
  * @since 1.0.0
  */
 @SuppressWarnings("all")
-public final class DateUtil {
+public final class DateUtil extends DateUtils {
 
     /**
      * 日期类型枚举

@@ -5,6 +5,9 @@ package top.agno.gnosis.constants;
  */
 public interface Constants {
 
+    int ZERO = 0;
+    int ONE = 1;
+
     interface RSAKeys {
         /**
          * 公钥

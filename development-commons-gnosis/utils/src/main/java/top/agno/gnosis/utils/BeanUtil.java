@@ -17,6 +17,7 @@
 package top.agno.gnosis.utils;
 
 import com.google.common.collect.Maps;
+import org.springframework.beans.BeanUtils;
 import org.springframework.cglib.beans.BeanCopier;
 import org.springframework.cglib.beans.BeanMap;
 
@@ -33,7 +34,7 @@ import java.util.Map;
  * @author yto.net.cn
  * @since 1.0.0
  */
-public final class BeanUtil {
+public final class BeanUtil extends BeanUtils {
 
     private BeanUtil() {
     }
