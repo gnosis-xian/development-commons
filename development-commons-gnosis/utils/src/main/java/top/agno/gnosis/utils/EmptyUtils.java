@@ -28,7 +28,7 @@ import java.util.Map;
  * 描述: 判空工具类
  * </pre>
  *
- * @author yto.net.cn
+ * @author gnosis
  * @since 1.0.0
  */
 public final class EmptyUtils {

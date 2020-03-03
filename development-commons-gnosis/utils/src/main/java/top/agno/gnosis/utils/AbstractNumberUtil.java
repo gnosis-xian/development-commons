@@ -24,7 +24,7 @@ import org.apache.commons.lang3.math.NumberUtils;
  * 描述: number 工具类
  * </pre>
  *
- * @author yto.net.cn
+ * @author gnosis
  * @since 1.0.0
  */
 public abstract class AbstractNumberUtil extends NumberUtils {

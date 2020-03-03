@@ -16,14 +16,6 @@ import java.util.Map;
  */
 public class DocUtil {
 
-    public static void main(String[] args) {
-        Map map = new HashMap();
-        map.put("ar_cp_name", "圆通速递");
-        map.put("ar_dateTime", "2019-5-09");
-        map.put("ar_info", "高竞测试");
-//        getBuild("cn/net/yto/fms/commons/excel/imports/aa.doc",map,"D:/aaaa.doc");
-    }
-
 //    public static void getBuild(HttpServletResponse response, String tmpFile, Map<String, String> contentMap) {
 //
 //        //        InputStream inputStream = DocUtil.class.getClassLoader().getResourceAsStream(tmpFile);

@@ -27,7 +27,7 @@ import java.util.Base64;
  * 描述: Base64Util
  * </pre>
  *
- * @author yto.net.cn
+ * @author gnosis
  * @since 1.0.0
  */
 @SuppressWarnings("all")

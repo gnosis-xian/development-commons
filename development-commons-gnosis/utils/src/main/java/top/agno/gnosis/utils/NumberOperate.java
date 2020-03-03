@@ -29,7 +29,7 @@ import java.util.List;
  * 描述: number 操作final 类
  * </pre>
  *
- * @author yto.net.cn
+ * @author gnosis
  * @since 1.0.0
  */
 public class NumberOperate extends AbstractNumberUtil {

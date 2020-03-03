@@ -27,7 +27,7 @@ import java.util.Base64;
  * AES加密
  * </pre>
  *
- * @author yto.net.cn
+ * @author gnosis
  * @since 1.0.0
  */
 public final class AES {

@@ -27,7 +27,7 @@ import java.util.List;
  * 描述: List工具类
  * </pre>
  *
- * @author yto.net.cn
+ * @author gnosis
  * @since 1.0.0
  */
 @SuppressWarnings({"unchecked", "rawtypes"})

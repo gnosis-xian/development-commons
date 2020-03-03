@@ -22,7 +22,7 @@ package top.agno.gnosis.utils;
  * 描述: 特殊符号工具类
  * </pre>
  *
- * @author yto.net.cn
+ * @author gnosis
  * @since 1.0.0
  */
 public final class SpecharsUtil {

@@ -35,7 +35,7 @@ import java.util.Map;
  * 描述: Json工具类处理
  * </pre>
  *
- * @author yto.net.cn
+ * @author gnosis
  * @since 1.0.0
  */
 public final class JsonUtil implements java.io.Serializable {

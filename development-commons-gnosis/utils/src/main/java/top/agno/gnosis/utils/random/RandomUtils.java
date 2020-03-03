@@ -26,7 +26,7 @@ import java.util.UUID;
  * 描述: 随机数工具类
  * </pre>
  *
- * @author yto.net.cn
+ * @author gnosis
  * @since 1.0.0
  */
 public final class RandomUtils {

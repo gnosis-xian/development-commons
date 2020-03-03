@@ -23,7 +23,7 @@ import java.util.UUID;
  * 唯一序列号获取
  * </pre>
  *
- * @author yto.net.cn
+ * @author gnosis
  * @since 1.0.0
  */
 public final class IdUtil {

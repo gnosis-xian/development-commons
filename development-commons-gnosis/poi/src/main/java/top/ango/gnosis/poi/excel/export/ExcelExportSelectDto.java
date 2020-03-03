@@ -6,7 +6,7 @@ package top.ango.gnosis.poi.excel.export;
  * 描述: 自定义excel导出自定义导出DTO
  * </pre>
  *
- * @author yto.net.cn
+ * @author gnosis
  * @since 1.0.0
  */
 public class ExcelExportSelectDto {

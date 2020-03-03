@@ -1,8 +1,3 @@
-/*
- * Copyright (c) 2017. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
- * www.yto.net.cn
- */
-
 package top.agno.gnosis.utils;
 
 /**
@@ -10,7 +5,6 @@ package top.agno.gnosis.utils;
  * HexStringByte.java
  *
  * @author hjy
- * 2012-5-30 下午03:25:32  www.yto.net.cn Inc.All rights reserved.
  */
 public class HexStringByte {
 

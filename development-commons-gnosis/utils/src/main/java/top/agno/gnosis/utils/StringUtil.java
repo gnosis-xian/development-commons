@@ -31,7 +31,7 @@ import java.util.regex.Pattern;
  * 描述: 字符串工具类
  * </pre>
  *
- * @author yto.net.cn
+ * @author gnosis
  * @since 1.0.0
  */
 public class StringUtil extends StringUtils {

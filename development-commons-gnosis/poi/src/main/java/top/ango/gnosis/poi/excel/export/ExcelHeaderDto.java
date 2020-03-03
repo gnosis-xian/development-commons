@@ -8,7 +8,7 @@ import java.io.Serializable;
  * 描述: 自定义excel导出列头
  * </pre>
  *
- * @author yto.net.cn
+ * @author gnosis
  * @since 1.0.0
  */
 public class ExcelHeaderDto implements Serializable {

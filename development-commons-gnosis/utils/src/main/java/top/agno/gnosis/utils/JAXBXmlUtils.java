@@ -27,7 +27,7 @@ import java.util.Map;
 /**
  * JAXBXmlUtils 工具类 ： 转换xml和java实体类
  *
- * @author yto.net.cn
+ * @author gnosis
  * @since 1.0.1
  */
 public final class JAXBXmlUtils {

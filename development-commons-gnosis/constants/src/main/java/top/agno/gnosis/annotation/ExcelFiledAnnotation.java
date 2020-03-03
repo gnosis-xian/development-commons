@@ -11,7 +11,7 @@ import java.lang.annotation.Target;
  * 描述: 自定义excel导出字段注解
  * </pre>
  *
- * @author yto.net.cn
+ * @author gnosis
  * @since 1.0.0
  */
 @Target({ElementType.FIELD})

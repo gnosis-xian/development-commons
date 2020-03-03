@@ -29,7 +29,7 @@ import java.util.Set;
  * 描述: 参考 org.apache.ibatis.type.SimpleTypeRegistry
  * </pre>
  *
- * @author yto.net.cn
+ * @author gnosis
  * @since 1.0.0
  */
 public final class SimpleTypeUtil {

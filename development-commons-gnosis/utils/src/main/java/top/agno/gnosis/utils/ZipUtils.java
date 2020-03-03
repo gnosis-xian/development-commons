@@ -29,7 +29,7 @@ import java.util.zip.*;
  * 描述: 字符串压缩、解压操作工具类
  * </pre>
  *
- * @author yto.net.cn
+ * @author gnosis
  * @since 1.0.0
  */
 public final class ZipUtils {

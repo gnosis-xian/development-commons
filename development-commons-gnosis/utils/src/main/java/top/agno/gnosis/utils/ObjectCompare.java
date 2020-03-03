@@ -24,7 +24,7 @@ import java.util.regex.Pattern;
 /**
  * 对象比较处理类
  *
- * @author yto.net.cn
+ * @author gnosis
  * @since 1.0.0
  */
 public final class ObjectCompare {

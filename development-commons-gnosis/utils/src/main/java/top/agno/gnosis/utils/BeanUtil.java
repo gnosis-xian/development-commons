@@ -31,7 +31,7 @@ import java.util.Map;
  * 描述: 基于cglib进行Bean Copy
  * </pre>
  *
- * @author yto.net.cn
+ * @author gnosis
  * @since 1.0.0
  */
 public final class BeanUtil extends BeanUtils {

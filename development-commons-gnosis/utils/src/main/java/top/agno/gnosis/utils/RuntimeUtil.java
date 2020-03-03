@@ -30,7 +30,7 @@ import java.util.jar.JarFile;
 /**
  * 系统运行时功能扩展类
  *
- * @author yto.net.cn
+ * @author gnosis
  * @since 1.0.0
  */
 public final class RuntimeUtil {

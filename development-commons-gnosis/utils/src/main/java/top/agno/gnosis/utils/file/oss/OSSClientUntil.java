@@ -8,7 +8,7 @@ import com.aliyun.oss.OSSClient;
  * 描述: 阿里云OSS客户端工具类
  * </pre>
  *
- * @author yto.net.cn
+ * @author gnosis
  * @since 1.0.0
  */
 public class OSSClientUntil {

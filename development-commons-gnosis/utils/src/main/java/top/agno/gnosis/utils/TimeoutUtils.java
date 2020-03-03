@@ -24,7 +24,7 @@ import java.util.concurrent.TimeUnit;
  * 描述: 超时工具类
  * </pre>
  *
- * @author yto.net.cn
+ * @author gnosis
  * @since 1.0.0
  */
 public final class TimeoutUtils {

@@ -32,7 +32,7 @@ import java.security.SecureRandom;
  * 描述: 提供部分加密方法
  * </pre>
  *
- * @author yto.net.cn
+ * @author gnosis
  * @since 1.0.0
  */
 public final class EncryptUtils {

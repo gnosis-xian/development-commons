@@ -62,16 +62,6 @@ public class MailUtil {
     }
 
     public static void main(String[] args) throws UnknownMailAddressException {
-        MimeMail mimeMail = MimeMail.Builder.initMailSender(
-                "mail.yto.net.cn",
-                "smtp",
-                465,
-                "yto_baoli@yto.net.cn",
-                "YTObl2019",
-                false);
-        List<String> to = new ArrayList<>();// 收件人集合
-        to.add("gaojing1996@vip.qq.com");
-        to.add("815540606@qq.com");
-        mimeMail.sendMail(to, "你有新的消息", "请到网站内查看" + new Date());
+        // TWltZU1haWwlMjBtaW1lTWFpbCUyMCUzRCUyME1pbWVNYWlsLkJ1aWxkZXIuaW5pdE1haWxTZW5kZXIlMjglMEElMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjJtYWlsLnl0by5uZXQuY24lMjIlMkMlMEElMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjJzbXRwJTIyJTJDJTBBJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwNDY1JTJDJTBBJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIyeXRvX2Jhb2xpQHl0by5uZXQuY24lMjIlMkMlMEElMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjJZVE9ibDIwMTklMjIlMkMlMEElMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjBmYWxzZSUyOSUzQiUwQSUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMExpc3QlM0NTdHJpbmclM0UlMjB0byUyMCUzRCUyMG5ldyUyMEFycmF5TGlzdCUzQyUzRSUyOCUyOSUzQi8vJTIwJXU2NTM2JXU0RUY2JXU0RUJBJXU5NkM2JXU1NDA4JTBBJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwdG8uYWRkJTI4JTIyZ2FvamluZzE5OTZAdmlwLnFxLmNvbSUyMiUyOSUzQiUwQSUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMHRvLmFkZCUyOCUyMjgxNTU0MDYwNkBxcS5jb20lMjIlMjklM0IlMEElMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjBtaW1lTWFpbC5zZW5kTWFpbCUyOHRvJTJDJTIwJTIyJXU0RjYwJXU2NzA5JXU2NUIwJXU3Njg0JXU2RDg4JXU2MDZGJTIyJTJDJTIwJTIyJXU4QkY3JXU1MjMwJXU3RjUxJXU3QUQ5JXU1MTg1JXU2N0U1JXU3NzBCJTIyJTIwKyUyMG5ldyUyMERhdGUlMjglMjklMjklM0I=
     }
 }

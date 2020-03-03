@@ -147,18 +147,6 @@ public class ConsulUtil {
     }
 
     public static void main(String[] args) {
-//        IntStream.rangeClosed(1, 10000).forEach(e -> {
-//            ConsulUtil consulUtil = new ConsulUtil("http://192.168.207.140:8501");
-//            insertOrUpdateKey(System.currentTimeMillis() + "", System.currentTimeMillis() + "");
-//            System.out.println(getKeys());
-//        });
-
-        ConsulUtil consulUtil = new ConsulUtil("http://192.168.207.140:8501");
-
-//        System.out.println(consulUtil.getValues().size());
-//        System.out.println(consulUtil.getValues("15664774188").size());
-//        System.out.println(consulUtil.getValues("15664774184").size());
-
-//        consulUtil.deleteAllOfKeys();
+        // Ly8lMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjBJbnRTdHJlYW0ucmFuZ2VDbG9zZWQlMjgxJTJDJTIwMTAwMDAlMjkuZm9yRWFjaCUyOGUlMjAtJTNFJTIwJTdCJTBBLy8lMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjBDb25zdWxVdGlsJTIwY29uc3VsVXRpbCUyMCUzRCUyMG5ldyUyMENvbnN1bFV0aWwlMjglMjJodHRwJTNBLy8xOTIuMTY4LjIwNy4xNDAlM0E4NTAxJTIyJTI5JTNCJTBBLy8lMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjBpbnNlcnRPclVwZGF0ZUtleSUyOFN5c3RlbS5jdXJyZW50VGltZU1pbGxpcyUyOCUyOSUyMCslMjAlMjIlMjIlMkMlMjBTeXN0ZW0uY3VycmVudFRpbWVNaWxsaXMlMjglMjklMjArJTIwJTIyJTIyJTI5JTNCJTBBLy8lMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjBTeXN0ZW0ub3V0LnByaW50bG4lMjhnZXRLZXlzJTI4JTI5JTI5JTNCJTBBLy8lMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlN0QlMjklM0IlMEElMEElMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjBDb25zdWxVdGlsJTIwY29uc3VsVXRpbCUyMCUzRCUyMG5ldyUyMENvbnN1bFV0aWwlMjglMjJodHRwJTNBLy8xOTIuMTY4LjIwNy4xNDAlM0E4NTAxJTIyJTI5JTNCJTBBJTBBLy8lMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjBTeXN0ZW0ub3V0LnByaW50bG4lMjhjb25zdWxVdGlsLmdldFZhbHVlcyUyOCUyOS5zaXplJTI4JTI5JTI5JTNCJTBBLy8lMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjBTeXN0ZW0ub3V0LnByaW50bG4lMjhjb25zdWxVdGlsLmdldFZhbHVlcyUyOCUyMjE1NjY0Nzc0MTg4JTIyJTI5LnNpemUlMjglMjklMjklM0IlMEEvLyUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMFN5c3RlbS5vdXQucHJpbnRsbiUyOGNvbnN1bFV0aWwuZ2V0VmFsdWVzJTI4JTIyMTU2NjQ3NzQxODQlMjIlMjkuc2l6ZSUyOCUyOSUyOSUzQiUwQSUwQS8vJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwY29uc3VsVXRpbC5kZWxldGVBbGxPZktleXMlMjglMjklM0I=
     }
 }

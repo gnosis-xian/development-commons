@@ -15,7 +15,7 @@ import java.util.Map;
  * 描述: 自定义excel导出参数处理工具类
  * </pre>
  *
- * @author yto.net.cn
+ * @author gnosis
  * @since 1.0.0
  */
 public class ExcelSelectParamUtil {

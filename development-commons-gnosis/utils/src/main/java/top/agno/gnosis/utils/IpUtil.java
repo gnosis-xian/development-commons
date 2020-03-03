@@ -32,7 +32,7 @@ import java.util.List;
  * 获取本机IP
  * </pre>
  *
- * @author yto.net.cn
+ * @author gnosis
  * @since 1.0.0
  */
 @Slf4j
