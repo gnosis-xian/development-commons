@@ -53,7 +53,7 @@
         <guava.version>18.0</guava.version>
         <apache.commons.version>3.4</apache.commons.version>
         <slf4j-api.version>1.7.7</slf4j-api.version>
-        <commons.io.version>2.4</commons.io.version>
+        <commons.io.version>2.7</commons.io.version>
         <apache.common.collections>3.2.2</apache.common.collections>
         <commons-net.version>3.2</commons-net.version>
         <commons-codec.version>1.5</commons-codec.version>
