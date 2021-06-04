@@ -60,7 +60,7 @@
         <guice.version>4.1.0</guice.version>
         <joda.time.version>2.9.9</joda.time.version>
         <pagehelper.version>5.1.1</pagehelper.version>
-        <apache.http.version>4.5.9</apache.http.version>
+        <apache.http.version>4.5.13</apache.http.version>
         <easypoi.version>3.2.0</easypoi.version>
         <alibaba.easypoi.version>2.0.0-beta1</alibaba.easypoi.version>
         <apache.commons.lang3.version>3.2.1</apache.commons.lang3.version>
