@@ -64,7 +64,7 @@
         <easypoi.version>3.2.0</easypoi.version>
         <alibaba.easypoi.version>2.0.0-beta1</alibaba.easypoi.version>
         <apache.commons.lang3.version>3.2.1</apache.commons.lang3.version>
-        <jsch.version>0.1.53</jsch.version>
+        <jsch.version>0.1.54</jsch.version>
         <javax.mail.version>1.4</javax.mail.version>
         <aliyun.oss.sdk.version>3.1.0</aliyun.oss.sdk.version>
     </properties>
